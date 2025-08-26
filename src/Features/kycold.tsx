@@ -69,7 +69,8 @@ const KycFormold = () => {
     try {
       const response = await axiosInstance.post("/update-kyc", values); // Adjust API path
       setLoading(false);
-      navigate("/dashboard");
+        navigate("/dashboard");
+        console.log("KYC details submitted successfully:", response.data);
     } catch (error: any) {
       setLoading(false);
       if (error.response?.data?.errors) {

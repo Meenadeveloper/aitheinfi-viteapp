@@ -9,8 +9,10 @@ interface Options {
   isDisabled?: boolean;
   options?: Options[];
 }
-
+// import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 const KycForm = () => {
+  const navigate = useNavigate();
   document.title = "Register | Tailwick - React Admin & Dashboard Template";
 
   React.useEffect(() => {
@@ -22,7 +24,13 @@ const KycForm = () => {
       bodyElement.classList.remove("font-public");
     };
   }, []);
+const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
 
+  // Perform validation or API call here
+  // Assuming success, navigate to dashboard
+  navigate("/dashboard");
+};
   const DefaultOptions: Options[] = [
     { label: "", value: "This is a placeholder" },
     { label: "aadhaar ", value: "aadhaar" },
@@ -46,7 +54,7 @@ const KycForm = () => {
               </p>
             </div>
 
-            <form >
+            <form onSubmit={handleSubmit}>
               <div
                 className="hidden p-3 mb-3 text-base text-green-500 border border-green-200 rounded-md bg-green-50"
                 id="successAlert"
