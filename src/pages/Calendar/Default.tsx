@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import BreadCrumb from "Common/BreadCrumb";
+import BreadCrumb from "../../Common/BreadCrumb";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin, { Draggable } from "@fullcalendar/interaction";
@@ -20,9 +20,9 @@ import {
     deleteEvents as onDeleteEvents,
     getCategory as onGetCategory,
     deleteCategory as onDeleteCategory
-} from 'slices/thunk';
-import Modal from "Common/Components/Modal";
-import DeleteModal from "Common/DeleteModal";
+} from '../../slices/thunk';
+import Modal from "../../Common/Components/Modal";
+import DeleteModal from "../../Common/DeleteModal";
 import { ToastContainer } from "react-toastify";
 
 const DefaultCalendar = () => {

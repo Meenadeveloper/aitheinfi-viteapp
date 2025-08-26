@@ -1,6 +1,6 @@
 import React from "react";
 import ReactApexChart from "react-apexcharts";
-import useChartColors from "Common/useChartColors";
+import useChartColors from "../../../Common/useChartColors";
 import moment from "moment";
 
 const CategoryXaxis = ({ chartId }: any) => {

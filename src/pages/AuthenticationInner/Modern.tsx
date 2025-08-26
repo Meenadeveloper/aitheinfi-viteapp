@@ -1,8 +1,8 @@
 import React from "react";
 
 // Image
-import logoLight from "assets/images/logo-light.png";
-import modern from "assets/images/auth-modern.png";
+import logoLight from "../../assets/images/lightlogo.png";
+import modern from "../../assets/images/auth-modern.png";
 import { Link } from "react-router-dom";
 
 const Modern = () => {

@@ -1,4 +1,5 @@
 import "./assets/scss/themes.scss";
+import "./App.css";
 import RouteIndex from "../src/Routes/Index";
 
 import fakeBackend from "./helpers/AuthType/fakeBackend";

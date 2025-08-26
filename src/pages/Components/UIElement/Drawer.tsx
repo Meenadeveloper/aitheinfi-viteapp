@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import BreadCrumb from "Common/BreadCrumb";
-import Drawer from "Common/Components/Drawer";
+import BreadCrumb from "../../../Common/BreadCrumb";
+import Drawer from "../../../Common/Components/Drawer";
 import { X } from "lucide-react";
 
 const UIDrawer = () => {

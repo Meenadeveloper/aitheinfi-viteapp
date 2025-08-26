@@ -1,7 +1,7 @@
 import React from 'react';
 import { ChevronDown, Cog, Coins, Kanban, ListFilter, Users } from 'lucide-react';
 import CountUp from 'react-countup';
-import { Dropdown } from 'Common/Components/Dropdown';
+import { Dropdown } from '../../../Common/Components/Dropdown';
 import { PerspectiveChart } from './Charts';
 import { Link } from 'react-router-dom';
 

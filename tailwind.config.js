@@ -8,6 +8,7 @@ export default {
   theme: {
     fontFamily: {
       public: ['"Public Sans", sans-serif'],
+      // public: ['"Monad", sans-serif'],
       tourney: ['"Tourney", sans-serif'],
       remix: ["remixicon"],
     },

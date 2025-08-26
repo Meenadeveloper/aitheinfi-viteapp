@@ -1,15 +1,15 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import BreadCrumb from 'Common/BreadCrumb';
+import BreadCrumb from '../../../Common/BreadCrumb';
 import Flatpickr from 'react-flatpickr';
-import TableContainer from 'Common/TableContainer';
+import TableContainer from '../../../Common/TableContainer';
 import { Link } from 'react-router-dom';
 
 // Icons
 import { Search, MoreHorizontal, Eye, FileEdit, Trash2, Plus } from 'lucide-react';
 
-import { Dropdown } from 'Common/Components/Dropdown';
+import { Dropdown } from '../../../Common/Components/Dropdown';
 
-import DeleteModal from 'Common/DeleteModal';
+import DeleteModal from '../../../Common/DeleteModal';
 
 // react-redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -18,9 +18,9 @@ import { createSelector } from 'reselect';
 import {
     getEmployeeSalary as onGetEmployeeSalary,
     deleteEmployeeSalary as onDeleteEmployeeSalary
-} from 'slices/thunk';
+} from '../../../slices/thunk';
 import { ToastContainer } from 'react-toastify';
-import filterDataBySearch from 'Common/filterDataBySearch';
+import filterDataBySearch from '../../../Common/filterDataBySearch';
 
 const EmployeeSalary = () => {
 

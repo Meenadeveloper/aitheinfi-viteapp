@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Flatpickr from 'react-flatpickr';
-import BreadCrumb from "Common/BreadCrumb";
+import BreadCrumb from "../../../Common/BreadCrumb";
 import Select from 'react-select';
 
 // Icon

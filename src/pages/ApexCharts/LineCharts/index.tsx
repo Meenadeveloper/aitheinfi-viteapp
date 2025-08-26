@@ -1,5 +1,4 @@
-import BreadCrumb from 'Common/BreadCrumb'
-import React from 'react'
+import BreadCrumb from '../../../Common/BreadCrumb'
 import { BasicLine, DataLabelLine } from './Basic&Datalabel'
 import ZoomableTimeSeries from './ZoomableTimeSeries'
 import AnnotationLine from './AnnotationLine'

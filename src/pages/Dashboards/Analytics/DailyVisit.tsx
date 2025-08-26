@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dropdown } from 'Common/Components/Dropdown';
+import { Dropdown } from '../../../Common/Components/Dropdown';
 import { Info, MoreVertical } from 'lucide-react';
 import { DailyVisitChart } from './Charts';
 import { Link } from 'react-router-dom';

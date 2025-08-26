@@ -1,5 +1,5 @@
 import React from "react";
-import { Dropdown } from "Common/Components/Dropdown";
+import { Dropdown } from "../../Common/Components/Dropdown";
 
 // Image
 import us from "assets/images/flags/us.svg";

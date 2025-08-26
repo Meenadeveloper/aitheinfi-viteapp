@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { UpcomingInterviewData } from 'Common/data';
+import { UpcomingInterviewData } from '../../../Common/data';
 
 // SimpleBar
 import SimpleBar from 'simplebar-react';
 
 // Icons
 import { MoreVertical, Calendar, Clock4 } from 'lucide-react';
-import { Dropdown } from 'Common/Components/Dropdown';
+import { Dropdown } from '../../../Common/Components/Dropdown';
 import { Link } from 'react-router-dom';
 
 const UpcomingInterview = () => {

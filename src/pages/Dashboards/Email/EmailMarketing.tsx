@@ -1,6 +1,6 @@
 import React from 'react';
 import { EmailMarketingChart } from './Charts';
-import { Dropdown } from 'Common/Components/Dropdown';
+import { Dropdown } from '../../../Common/Components/Dropdown';
 import { MoreHorizontal } from 'lucide-react';
 import { Link } from 'react-router-dom';
 

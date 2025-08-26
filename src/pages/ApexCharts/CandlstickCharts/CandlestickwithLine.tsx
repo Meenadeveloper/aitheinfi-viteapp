@@ -1,6 +1,6 @@
 import React from "react";
 import ReactApexChart from "react-apexcharts";
-import useChartColors from "Common/useChartColors";
+import useChartColors from "../../../Common/useChartColors";
 
 const CandlestickwithLine = ({ chartId }: any) => {
 
@@ -291,7 +291,7 @@ const CandlestickwithLine = ({ chartId }: any) => {
             shared: true,
             custom: [function ({ seriesIndex, dataPointIndex, w } : any) {
                 return w.globals.series[seriesIndex][dataPointIndex];
-            }, function ({ seriesIndex, dataPointIndex, w } : any) {
+            }, function ( ) {
                 return (
                     ''
                 );

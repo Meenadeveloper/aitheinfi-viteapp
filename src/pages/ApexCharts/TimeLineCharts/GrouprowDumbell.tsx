@@ -1,5 +1,5 @@
 import React from 'react';
-import useChartColors from 'Common/useChartColors';
+import useChartColors from '../../../Common/useChartColors';
 import ReactApexChart from 'react-apexcharts';
 
 const Grouprow = ({ chartId }: any) => {
@@ -207,7 +207,7 @@ const Grouprow = ({ chartId }: any) => {
             position: 'right'
         },
         tooltip: {
-            custom: function (opts: any) {
+            custom: function () {
                 // const fromYear = new Date(opts.y1).getFullYear()
                 // const toYear = new Date(opts.y2).getFullYear()
                 // const values = opts.ctx.rangeBar.getTooltipValues(opts)

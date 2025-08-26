@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CountUp from 'react-countup';
-import BreadCrumb from 'Common/BreadCrumb';
+import BreadCrumb from '../../../Common/BreadCrumb';
 import Widgets from './Widgets';
 import EmployeePerformance from './EmployeePerformance';
 import UpcomingScheduled from './UpcomingScheduled';

@@ -1,5 +1,5 @@
 import React from 'react';
-import BreadCrumb from 'Common/BreadCrumb';
+import BreadCrumb from '../../../Common/BreadCrumb';
 import Widgets from './Widgets';
 import LocationBased from './LocationBased';
 import Interaction from './Interaction';

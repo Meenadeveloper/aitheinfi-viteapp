@@ -2,7 +2,7 @@ import React from "react";
 import ReactApexChart from "react-apexcharts";
 // import useChartColors from "Common/useChartColors";
 
-const ReversedBarChart = ({ chartId }: any) => {
+const ReversedBarChart = ({  }: any) => {
 
     //Reversed Bar Chart
     var options: any = {

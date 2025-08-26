@@ -39,20 +39,21 @@ import InvoiceReducer from "./invoice/reducer"
 // Users
 import UsersReducer from "./users/reducer";
 
+// KYC
 const rootReducer = combineReducers({
-    Layout: LayoutReducer,
-    Login: LoginReducer,
-    Register: RegisterReducer,
-    Profile: ProfileReducer,
-    Chat: ChatReducer,
-    Mailbox: MailboxReducer,
-    Calendar: CalendarReducer,
-    Ecommerce: EcommerceReducer,
-    HRManagment: HRManagmentReducer,
-    Notes: NotesReducer,
-    Social: SocialReducer,
-    Invoice: InvoiceReducer,
-    Users: UsersReducer,
+  Layout: LayoutReducer,
+  Login: LoginReducer,
+  Register: RegisterReducer,
+  Profile: ProfileReducer,
+  Chat: ChatReducer,
+  Mailbox: MailboxReducer,
+  Calendar: CalendarReducer,
+  Ecommerce: EcommerceReducer,
+  HRManagment: HRManagmentReducer,
+  Notes: NotesReducer,
+  Social: SocialReducer,
+  Invoice: InvoiceReducer,
+  Users: UsersReducer,
 });
 
 

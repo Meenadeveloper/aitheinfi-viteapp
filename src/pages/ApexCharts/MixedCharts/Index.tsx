@@ -1,5 +1,4 @@
-import BreadCrumb from 'Common/BreadCrumb'
-import React from 'react'
+import BreadCrumb from '../../../Common/BreadCrumb'
 import LineColumn from './LineColumn'
 import MultipleYaxis from './MultipleYaxis'
 import LineArea from './LineArea'

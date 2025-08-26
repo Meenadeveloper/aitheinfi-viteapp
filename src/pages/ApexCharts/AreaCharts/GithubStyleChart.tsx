@@ -1,6 +1,6 @@
 import React from "react";
 import ReactApexChart from "react-apexcharts";
-import useChartColors from "Common/useChartColors";
+import useChartColors from "../../../Common/useChartColors";
 import { githubdata } from "../Series";
 
 const GithubStyleChart = ({ chartId }: any) => {

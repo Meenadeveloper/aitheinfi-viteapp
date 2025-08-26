@@ -1,6 +1,6 @@
 import React from "react";
 import ReactApexChart from "react-apexcharts";
-import useChartColors from "Common/useChartColors";
+import useChartColors from "../../../Common/useChartColors";
 import { seriesData1, seriesDataLinear } from "../Series";
 
 const CandlestickSynced = ({ chartId }: any) => {

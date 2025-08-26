@@ -1,5 +1,5 @@
 import React from "react";
-import BreadCrumb from "Common/BreadCrumb";
+import BreadCrumb from "../../../Common/BreadCrumb";
 import { BarChartHorizontalBig, Percent, ShoppingCart, Store } from "lucide-react";
 
 // Image

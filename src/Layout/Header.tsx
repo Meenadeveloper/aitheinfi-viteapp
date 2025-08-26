@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { ChevronsLeft, ChevronsRight, Gem, LogOut, Mail, MessagesSquare, Search, Settings, ShoppingCart, User2 } from 'lucide-react';
+import { ChevronsLeft, ChevronsRight, Gem, LogOut, Mail, MessagesSquare, Search, User2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { createSelector } from 'reselect';

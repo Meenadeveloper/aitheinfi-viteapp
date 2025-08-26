@@ -1,5 +1,4 @@
-import BreadCrumb from 'Common/BreadCrumb';
-import React from 'react';
+import BreadCrumb from '../../../Common/BreadCrumb';
 import { SimpleChart } from './SimpleChart';
 import { Bubble3DChart } from './3DBubble';
 

@@ -10,18 +10,18 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
 // Images
-import avatar1 from "assets/images/users/avatar-1.png";
-import avatar5 from "assets/images/users/avatar-5.png";
-import avatar7 from "assets/images/users/avatar-7.png";
-import avatar8 from "assets/images/users/avatar-8.png";
+import avatar1 from "../../../assets/images/users/avatar-1.png";
+import avatar5 from "../../../assets/images/users/avatar-5.png";
+import avatar7 from "../../../assets/images/users/avatar-7.png";
+import avatar8 from "../../../assets/images/users/avatar-8.png";
 
 import smallImg3 from "assets/images/small/img-3.jpg";
 import smallImg5 from "assets/images/small/img-5.jpg";
 import smallImg6 from "assets/images/small/img-6.jpg";
 
-import { storyData } from "Common/data";
-import { Dropdown } from "Common/Components/Dropdown";
-import Modal from "Common/Components/Modal";
+import { storyData } from "../../../Common/data";
+import { Dropdown } from "../../../Common/Components/Dropdown";
+import Modal from "../../../Common/Components/Modal";
 import Dropzone from "react-dropzone";
 
 const CommentFeed = () => {

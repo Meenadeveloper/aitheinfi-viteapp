@@ -7,12 +7,12 @@ import { useFormik as useFormic } from "formik";
 //redux
 import { useSelector, useDispatch } from "react-redux";
 
-import userProfile from "assets/images/users/user-profile.png";
+import userProfile from "../../assets/images/users/user-profile.png";
 
 import { createSelector } from "reselect";
-import BreadCrumb from "Common/BreadCrumb";
-import withRouter from "Common/withRouter";
-import { editProfile } from "slices/thunk";
+import BreadCrumb from "../../Common/BreadCrumb";
+import withRouter from "../../Common/withRouter";
+import { editProfile } from "../../slices/thunk";
 
 const UserProfile = () => {
   //meta title

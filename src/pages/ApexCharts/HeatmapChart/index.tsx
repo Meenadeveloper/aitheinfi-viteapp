@@ -1,5 +1,4 @@
-import BreadCrumb from 'Common/BreadCrumb';
-import React from 'react';
+import BreadCrumb from '../../../Common/BreadCrumb';
 import { BasicHeatmap, ColorRange, MultipleColors, RoundedChart } from './Charts';
 
 const HeatmapChart = () => {

@@ -146,7 +146,7 @@ const TrafficResourcesChart = ({ chartId }: any) => {
                     total: {
                         show: true,
                         label: 'Total',
-                        formatter: function (w: any) {
+                        formatter: function () {
                             // By default this function returns the average of all series. The below is just an example to show the use of custom formatter function
                             return 875;
                         }

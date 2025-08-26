@@ -33,7 +33,7 @@ const HomePage: React.FC = () => {
   // const y = useTransform(textProgress, [0, 0.3], [10, 0]);
   return (
     <>
-      <div className=".landing-body" style={{ backgroundColor: '#000000' }}>
+      <div className=".landing-body" style={{ backgroundColor: "#000000" }}>
         {/* hero banner section start */}
         <section
           className="section.is-hero w-[100%]   min-h-[100dvh] h-full overflow-hidden"
@@ -141,12 +141,12 @@ const HomePage: React.FC = () => {
                       isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }
                     }
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="text-2xl font-bold mb-4"
+                    className="text-2xl font-bold mb-4 dark:text-white text-white"
                   >
                     Overview
                   </motion.h2>
                   <motion.p
-                    className=" leading-relaxed"
+                    className=" leading-relaxed dark:text-white text-white"
                     initial={{ opacity: 0, y: 50 }}
                     animate={
                       isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }
@@ -170,7 +170,7 @@ const HomePage: React.FC = () => {
                     className="button"
                     onClick={() => navigate("/welcome")}
                   >
-                    <div className="button_inner">
+                    <div className="button_inner dark:text-white text-white">
                       <p>Get Started</p>
                     </div>
                     <div className="button-glow"></div>

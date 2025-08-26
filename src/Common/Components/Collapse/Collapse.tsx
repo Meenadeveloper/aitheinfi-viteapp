@@ -1,4 +1,6 @@
-import React, { ElementType } from 'react';
+import React from 'react';
+import type { ElementType } from "react";
+
 import { CollapseTrigger } from './CollapseTrigger';
 import { CollapseContent } from './CollapseContent';
 import { CollapseContextProvider } from './CollapseContext';

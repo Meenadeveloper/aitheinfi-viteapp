@@ -28,7 +28,7 @@ class FirebaseAuthBackend {
         .auth()
         .createUserWithEmailAndPassword(email, password)
         .then(
-          (user: any) => {
+          () => {
             resolve(firebase.auth().currentUser);
           },
           (error: any) => {
@@ -57,7 +57,7 @@ class FirebaseAuthBackend {
   //   });
   // };
 
-  editProfileAPI = (username: any, idx: any) => {
+  editProfileAPI = (username: any,) => {
     return new Promise((resolve, reject) => {
       const currentUser = firebase.auth().currentUser;
       if (currentUser) {
@@ -87,7 +87,7 @@ class FirebaseAuthBackend {
         .auth()
         .signInWithEmailAndPassword(email, password)
         .then(
-          (user: any) => {
+          () => {
             resolve(firebase.auth().currentUser);
           },
           (error: any) => {

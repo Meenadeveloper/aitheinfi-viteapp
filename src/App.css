@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@font-face {
+  font-family: "Monad";
+ src: url("../src/assets/font/Monad-v2.ttf") format("truetype"),
+       url("../src/assets/font/Monad-v2.otf") format("opentype");
+  font-weight: 100 900;        /* if variable/unknown, this is broad; otherwise define specific weights */
+  font-style: normal;
+  font-display: swap;          /* avoids invisible text */
+}
+
+/* Apply to entire body */
+body {
+  font-family: "Monad", sans-serif;
+}
+
+*:focus{
+  outline: none;
+  
+}

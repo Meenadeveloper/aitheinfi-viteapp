@@ -1,6 +1,6 @@
 import React from "react";
 import { LogIn, Menu, ShoppingBag } from "lucide-react";
-import useActiveLink from "pages/Components/Navigation/Navbars/useActiveLink";
+import useActiveLink from "../../../../pages/Components/Navigation/Navbars/useActiveLink";
 import { Link } from "react-router-dom";
 
 // Image

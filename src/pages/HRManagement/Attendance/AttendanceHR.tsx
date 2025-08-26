@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import BreadCrumb from 'Common/BreadCrumb';
+import BreadCrumb from '../../../Common/BreadCrumb';
 import Flatpickr from 'react-flatpickr';
-import TableContainer from 'Common/TableContainer';
+import TableContainer from '../../../Common/TableContainer';
 import CountUp from 'react-countup';
 import { Link } from 'react-router-dom';
 import Select from 'react-select';
@@ -16,8 +16,8 @@ import user3 from "assets/images/users/user-3.jpg";
 import { useDispatch, useSelector } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import { getAttendance as onGetAttendance } from 'slices/thunk';
-import filterDataBySearch from 'Common/filterDataBySearch';
+import { getAttendance as onGetAttendance } from '../../../slices/thunk';
+import filterDataBySearch from '../../../Common/filterDataBySearch';
 
 const AttendanceHR = () => {
 
@@ -89,12 +89,18 @@ const AttendanceHR = () => {
             header: "Action",
             enableColumnFilter: false,
             enableSorting: false,
-            cell: (cell: any) => (
+            cell: () => (
                 <div className="flex gap-2">
                     <Link to="#!" className="flex items-center justify-center size-8 text-green-500 transition-all duration-200 ease-linear bg-green-100 rounded-md hover:text-white hover:bg-green-500 dark:bg-green-500/20 dark:hover:bg-green-500"><Check className="size-4" /></Link>
                     <Link to="#!" className="flex items-center justify-center size-8 text-red-500 transition-all duration-200 ease-linear bg-red-100 rounded-md hover:text-white hover:bg-red-500 dark:bg-red-500/20 dark:hover:bg-red-500"><X className="size-4" /></Link>
                 </div>
             ),
+            //  cell: (cell: any) => (
+            //     <div className="flex gap-2">
+            //         <Link to="#!" className="flex items-center justify-center size-8 text-green-500 transition-all duration-200 ease-linear bg-green-100 rounded-md hover:text-white hover:bg-green-500 dark:bg-green-500/20 dark:hover:bg-green-500"><Check className="size-4" /></Link>
+            //         <Link to="#!" className="flex items-center justify-center size-8 text-red-500 transition-all duration-200 ease-linear bg-red-100 rounded-md hover:text-white hover:bg-red-500 dark:bg-red-500/20 dark:hover:bg-red-500"><X className="size-4" /></Link>
+            //     </div>
+            // ),
         }
     ], []
     );

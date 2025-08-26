@@ -1,11 +1,11 @@
 import React from "react";
-import BreadCrumb from "Common/BreadCrumb";
+import BreadCrumb from "../../../Common/BreadCrumb";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+// import 'swiper/css';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
 
 // Image
 import image1 from "assets/images/small/img-1.jpg";

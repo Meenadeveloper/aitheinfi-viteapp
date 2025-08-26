@@ -1,5 +1,5 @@
 import React from "react";
-import BreadCrumb from "Common/BreadCrumb";
+import BreadCrumb from "../../../../Common/BreadCrumb";
 import BasicDropdown from "./BasicDropdown";
 import SplitDropdowns from "./SplitDropdowns";
 import VariantDropdown from "./VariantDropdown";

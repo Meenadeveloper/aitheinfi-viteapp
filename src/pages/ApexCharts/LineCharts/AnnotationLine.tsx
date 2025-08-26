@@ -1,4 +1,4 @@
-import useChartColors from 'Common/useChartColors';
+import useChartColors from '../../../Common/useChartColors';
 import React from 'react'
 import { seriesData } from '../Series';
 import ReactApexChart from 'react-apexcharts';

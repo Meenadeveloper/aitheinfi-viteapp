@@ -1,4 +1,4 @@
-import BreadCrumb from 'Common/BreadCrumb'
+import BreadCrumb from '../../../Common/BreadCrumb'
 import React from 'react'
 import { MultipleRadial, SimpleRadial } from './SimpleMultiple'
 import { CustomRadial, GradientChart } from './CustomGradient'

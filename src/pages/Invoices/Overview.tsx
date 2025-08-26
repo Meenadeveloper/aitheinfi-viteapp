@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import BreadCrumb from 'Common/BreadCrumb';
+import BreadCrumb from "../../Common/BreadCrumb";
 
 // Icons
 import { Trash2, Save, MoreHorizontal, FileEdit } from 'lucide-react';
 
 // Images
-import logoSm from "assets/images/logo-sm.png";
-import { Dropdown } from 'Common/Components/Dropdown';
+import logoSm from "../../assets/images/logo-sm.png";
+import { Dropdown } from "../../Common/Components/Dropdown";
 import { Link } from 'react-router-dom';
-import DeleteModal from 'Common/DeleteModal';
+import DeleteModal from "../../Common/DeleteModal";
 
 const Overview = () => {
 

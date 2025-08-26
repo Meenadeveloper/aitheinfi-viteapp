@@ -1,16 +1,16 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import BreadCrumb from 'Common/BreadCrumb';
+import BreadCrumb from '../../Common/BreadCrumb';
 import { Link } from 'react-router-dom';
-import { Dropdown } from 'Common/Components/Dropdown';
-import TableContainer from 'Common/TableContainer';
+import { Dropdown } from "../../Common/Components/Dropdown";
+import TableContainer from "../../Common/TableContainer";
 import Flatpickr from "react-flatpickr";
 import moment from "moment";
 import Select from 'react-select';
 
 // Icons
 import { Search, Eye, Trash2, Plus, MoreHorizontal, FileEdit, CheckCircle, Loader, X, Download, SlidersHorizontal, ImagePlus } from 'lucide-react';
-import Modal from 'Common/Components/Modal';
-import DeleteModal from 'Common/DeleteModal';
+import Modal from '../../Common/Components/Modal';
+import DeleteModal from '../../Common/DeleteModal';
 
 // Images
 import dummyImg from "assets/images/users/user-dummy-img.jpg";
@@ -28,9 +28,9 @@ import {
     addUserList as onAddUserList,
     updateUserList as onUpdateUserList,
     deleteUserList as onDeleteUserList
-} from 'slices/thunk';
+} from '../../slices/thunk';
 import { ToastContainer } from 'react-toastify';
-import filterDataBySearch from 'Common/filterDataBySearch';
+import filterDataBySearch from '../../Common/filterDataBySearch';
 
 const ListView = () => {
     const dispatch = useDispatch<any>();
@@ -193,7 +193,7 @@ const ListView = () => {
             ),
             enableSorting: false,
             id: "checkAll",
-            cell: (cell: any) => {
+            cell: () => {
                 return (
                     <div className="flex items-center h-full">
                         <input id="Checkbox1" className="size-4 bg-white border border-slate-200 checked:bg-none dark:bg-zink-700 dark:border-zink-500 rounded-sm appearance-none arrow-none relative after:absolute after:content-['\eb7b'] after:top-0 after:left-0 after:font-remix after:leading-none after:opacity-0 checked:after:opacity-100 after:text-custom-500 checked:border-custom-500 dark:after:text-custom-500 dark:checked:border-custom-800 cursor-pointer" type="checkbox" />

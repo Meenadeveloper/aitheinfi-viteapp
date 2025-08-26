@@ -1,5 +1,5 @@
 import React from "react";
-import { Dropdown } from "Common/Components/Dropdown";
+import { Dropdown } from "../../../Common/Components/Dropdown";
 
 // Image
 import logoLight from "assets/images/logo-light.png"

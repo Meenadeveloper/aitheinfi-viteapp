@@ -75,7 +75,7 @@ const fakeBackend = () => {
 
     users.push(user);
 
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve, ) => {
       setTimeout(() => {
         resolve([200, user]);
       });
@@ -115,7 +115,7 @@ const fakeBackend = () => {
     const user = JSON.parse(config["data"]);
     users.push(user);
 
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve, ) => {
       setTimeout(() => {
         resolve([200, user]);
       });
@@ -186,10 +186,10 @@ const fakeBackend = () => {
     });
   });
 
-  mock.onPost("/jwt-forget-pwd").reply((config: any) => {
+  mock.onPost("/jwt-forget-pwd").reply(() => {
     // User needs to check that user is eXist or not and send mail for Reset New password
 
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve, ) => {
       setTimeout(() => {
         resolve([200, "Check you mail and reset your password."]);
       });

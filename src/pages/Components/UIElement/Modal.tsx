@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import BreadCrumb from "Common/BreadCrumb";
-import Modal from "Common/Components/Modal";
+import BreadCrumb from "../../../Common/BreadCrumb";
+import Modal from "../../../Common/Components/Modal";
 
 const UiModal = () => {
 

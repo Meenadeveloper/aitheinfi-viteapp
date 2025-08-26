@@ -1,5 +1,5 @@
 import React from "react";
-import BreadCrumb from "Common/BreadCrumb";
+import BreadCrumb from "../../../Common/BreadCrumb";
 import { Tooltip } from 'react-tooltip'
 import 'react-tooltip/dist/react-tooltip.css'
 

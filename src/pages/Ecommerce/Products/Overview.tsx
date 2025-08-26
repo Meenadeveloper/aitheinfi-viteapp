@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import BreadCrumb from "Common/BreadCrumb";
+import BreadCrumb from "../../../Common/BreadCrumb";
 import Flatpickr from "react-flatpickr";
 import moment from "moment";
 
@@ -7,18 +7,18 @@ import moment from "moment";
 import overview01 from "assets/images/product/overview-01.png";
 import overview02 from "assets/images/product/overview-02.png";
 
-import productImg01 from "assets/images/product/img-01.png";
-import productImg09 from "assets/images/product/img-09.png";
-import productImg12 from "assets/images/product/img-12.png";
-import productImg13 from "assets/images/product/img-13.png";
-import userDummy from "assets/images/users/user-dummy-img.jpg";
+import productImg01 from "../../../assets/images/product/img-01.png";
+import productImg09 from "../../../assets/images/product/img-09.png";
+import productImg12 from "../../../assets/images/product/img-12.png";
+import productImg13 from "../../../assets/images/product/img-13.png";
+import userDummy from "../../../assets/images/users/user-dummy-img.jpg";
 
 // Icon
 import { ShoppingCart, Repeat, HelpCircle, Share2, Store, Star, MapPin, MoreHorizontal, FileEdit, Trash2, Truck, Container, ThumbsUp, ThumbsDown, Tag } from 'lucide-react';
-import { Dropdown } from "Common/Components/Dropdown";
+import { Dropdown } from "../../../Common/Components/Dropdown";
 import { Link } from "react-router-dom";
-import DeleteModal from "Common/DeleteModal";
-import Modal from "Common/Components/Modal";
+import DeleteModal from "../../../Common/DeleteModal";
+import Modal from "../../../Common/Components/Modal";
 
 // react-redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -29,11 +29,11 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 
 import {
-    getReview as onGetReview,
-    addReview as onAddReview,
-    updateReview as onUpdateReview,
-    deleteReview as onDeleteReview
-} from 'slices/thunk';
+  getReview as onGetReview,
+  addReview as onAddReview,
+  updateReview as onUpdateReview,
+  deleteReview as onDeleteReview,
+} from "../../../slices/thunk";
 
 const Overview = () => {
 

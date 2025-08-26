@@ -21,7 +21,7 @@ const SignUpForm = () => {
             isAgree: Yup.boolean().oneOf([true], "You must agree to the terms and conditions.")
         }),
         onSubmit: (values: any) => {
-            // console.log(values);
+            console.log(values);
         },
     });
 

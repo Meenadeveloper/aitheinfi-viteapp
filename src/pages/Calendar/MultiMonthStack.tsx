@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useState } from "react";
-import BreadCrumb from "Common/BreadCrumb";
+import BreadCrumb from "../../Common/BreadCrumb";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
-import multiMonthPlugin from "@fullcalendar/multimonth";
+// import multiMonthPlugin from "@fullcalendar/multimonth";
 import interactionPlugin from "@fullcalendar/interaction";
 import listPlugin from '@fullcalendar/list';
 
@@ -19,9 +19,9 @@ import {
     addEvents as onAddEvents,
     updateEvents as onUpdateEvents,
     deleteEvents as onDeleteEvents,
-} from 'slices/thunk';
-import Modal from "Common/Components/Modal";
-import DeleteModal from "Common/DeleteModal";
+} from '../../slices/thunk';
+import Modal from "../../Common/Components/Modal";
+import DeleteModal from "../../Common/DeleteModal";
 import { ToastContainer } from "react-toastify";
 
 const MultiMonthStack = () => {
@@ -168,7 +168,7 @@ const MultiMonthStack = () => {
                                 <div id='calendar'>
                                     <FullCalendar
                                         plugins={[
-                                            multiMonthPlugin,
+                                            // multiMonthPlugin,
                                             dayGridPlugin,
                                             interactionPlugin,
                                             listPlugin
@@ -181,7 +181,7 @@ const MultiMonthStack = () => {
                                         editable={true}
                                         droppable={true}
                                         selectable={true}
-                                        multiMonthMaxColumns={1}
+                                        // multiMonthMaxColumns={1}
                                         events={data}
                                         headerToolbar={{
                                             left: 'prev,next,today',

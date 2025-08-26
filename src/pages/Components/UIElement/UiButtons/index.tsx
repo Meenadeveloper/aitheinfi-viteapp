@@ -1,5 +1,5 @@
 import React from "react";
-import BreadCrumb from "Common/BreadCrumb";
+import BreadCrumb from "../../../../Common/BreadCrumb";
 import BasicButtons from "./BasicButtons";
 import SoftDashed from "./SoftDashed";
 import AnimationButton from "./AnimationButton";

@@ -1,6 +1,6 @@
 import React from "react";
 import ReactApexChart from "react-apexcharts";
-import useChartColors from "Common/useChartColors";
+import useChartColors from "../../../Common/useChartColors";
 
 const StackedChart = ({ chartId }: any) => {
 
@@ -49,7 +49,7 @@ const StackedChart = ({ chartId }: any) => {
             height: 350,
             stacked: true,
             events: {
-                selection: function (chart : any, e : any) {
+                selection: function ( e : any) {
                     console.log(new Date(e.xaxis.min))
                 }
             },

@@ -1,15 +1,15 @@
 import React from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/autoplay';
+// import 'swiper/css';
+// import 'swiper/css/pagination';
+// import 'swiper/css/autoplay';
 
 // Image
-import avatar2 from "assets/images/users/avatar-2.png";
-import avatar4 from "assets/images/users/avatar-4.png";
-import avatar7 from "assets/images/users/avatar-7.png";
-import avatar9 from "assets/images/users/avatar-9.png";
+import avatar2 from "../../../../assets/images/users/avatar-2.png";
+import avatar4 from "../../../../assets/images/users/avatar-4.png";
+import avatar7 from "../../../..//images/users/avatar-7.png";
+import avatar9 from "../../../../assets/images/users/avatar-9.png";
 
 const Feedback = () => {
 

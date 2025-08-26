@@ -1,6 +1,6 @@
 import React from "react";
 import ReactApexChart from "react-apexcharts";
-import useChartColors from "Common/useChartColors";
+import useChartColors from "../../../Common/useChartColors";
 
 const WidgetChart = ({ series, chartId, DataChartColor }: any) => {
 
@@ -185,7 +185,7 @@ const EmailMarketingChart = ({ chartId }: any) => {
                     total: {
                         show: true,
                         label: 'Total',
-                        formatter: function (w : any) {
+                        formatter: function () {
                             return 249;
                         }
                     }

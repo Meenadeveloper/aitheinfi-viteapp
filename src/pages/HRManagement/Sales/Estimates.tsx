@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import BreadCrumb from 'Common/BreadCrumb';
-import TableContainer from 'Common/TableContainer';
-import { Dropdown } from 'Common/Components/Dropdown';
+import BreadCrumb from '../../../Common/BreadCrumb';
+import TableContainer from '../../../Common/TableContainer';
+import { Dropdown } from '../../../Common/Components/Dropdown';
 import { Link } from 'react-router-dom';
 import Flatpickr from 'react-flatpickr';
 import moment from "moment";
@@ -10,8 +10,8 @@ import Select from 'react-select';
 // Icons
 import { Search, MoreHorizontal, FileEdit, Trash2, Plus } from 'lucide-react';
 
-import DeleteModal from 'Common/DeleteModal';
-import Modal from 'Common/Components/Modal';
+import DeleteModal from '../../../Common/DeleteModal';
+import Modal from '../../../Common/Components/Modal';
 
 // react-redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -26,7 +26,7 @@ import {
     addEstimates as onAddEstimates,
     updateEstimates as onUpdateEstimates,
     deleteEstimates as onDeleteEstimates
-} from 'slices/thunk';
+} from '../../../slices/thunk';
 import { ToastContainer } from 'react-toastify';
 
 const Estimates = () => {

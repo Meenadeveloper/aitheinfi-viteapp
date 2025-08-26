@@ -1,5 +1,4 @@
-import React from 'react';
-import BreadCrumb from 'Common/BreadCrumb';
+import BreadCrumb from '../../../Common/BreadCrumb';
 import { BasicBarChart } from './BasicBarChart';
 import { GroupedChart } from './GroupedChart';
 import { StackedBarChart } from './StackedBarChart';
@@ -10,7 +9,7 @@ import { BarwithMarkers } from './BarwithMarkers';
 import { ReversedBarChart } from './ReversedBarChart';
 import { DataLabelsBar } from './DataLabelsBar';
 import { PatternedBar } from './PatternedBar';
-import { BarwithImages } from './BarwithImages';
+// import { BarwithImages } from './BarwithImages';
 
 const BarCharts = () => {
     return (
@@ -80,7 +79,7 @@ const BarCharts = () => {
                 <div className="card">
                     <div className="card-body">
                         <h6 className="mb-4 text-15">Bar with Images</h6>
-                        <BarwithImages chartId="barWithImagesChart" />
+                        {/* <BarwithImages chartId="barWithImagesChart" /> */}
                     </div>
                 </div>
             </div>

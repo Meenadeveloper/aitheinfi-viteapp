@@ -1,6 +1,6 @@
 import React from "react";
-import BreadCrumb from "Common/BreadCrumb";
-import Collapse from "Common/Components/Collapse/Collapse";
+import BreadCrumb from "../../../Common/BreadCrumb";
+import Collapse from "../../../Common/Components/Collapse/Collapse";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 const UiCollapse = () => {

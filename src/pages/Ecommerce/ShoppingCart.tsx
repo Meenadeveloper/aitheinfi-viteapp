@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 
 // Icon
 import { Trash2, Plus, Minus, Truck, Container, Search } from 'lucide-react';
-import BreadCrumb from "Common/BreadCrumb";
+import BreadCrumb from "../../Common/BreadCrumb";
 import { Link } from "react-router-dom";
-import DeleteModal from "Common/DeleteModal";
+import DeleteModal from "../../Common/DeleteModal";
 
-import { ShoppingCartData } from "Common/data";
+import { ShoppingCartData } from "../../Common/data";
 
 const ShoppingCart = () => {
 

@@ -1,5 +1,4 @@
-import BreadCrumb from 'Common/BreadCrumb';
-import React from 'react';
+import BreadCrumb from '../../../Common/BreadCrumb';
 import { BasicBoxplotCharts } from './BasicBoxplotCharts';
 import { BoxplotScatterChart } from './BoxplotScatterChart';
 import { HorizontalBoxPlot } from './HorizontalBoxPlot';

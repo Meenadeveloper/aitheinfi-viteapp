@@ -1,13 +1,13 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import BreadCrumb from 'Common/BreadCrumb';
+import BreadCrumb from '../../Common/BreadCrumb';
 
 // Icons
 import { Search, Plus, Trash2, Pencil } from 'lucide-react';
-import TableContainer from 'Common/TableContainer';
+import TableContainer from "../../Common/TableContainer";
 
 import { Link } from 'react-router-dom';
-import DeleteModal from 'Common/DeleteModal';
-import Modal from 'Common/Components/Modal';
+import DeleteModal from "../../Common/DeleteModal";
+import Modal from "../../Common/Components/Modal";
 
 // react-redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -18,11 +18,11 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 
 import {
-    getDepartments as onGetDepartments,
-    addDepartments as onAddDepartments,
-    updateDepartments as onUpdateDepartments,
-    deleteDepartments as onDeleteDepartments
-} from 'slices/thunk';
+  getDepartments as onGetDepartments,
+  addDepartments as onAddDepartments,
+  updateDepartments as onUpdateDepartments,
+  deleteDepartments as onDeleteDepartments,
+} from "../../slices/thunk";
 import { ToastContainer } from 'react-toastify';
 
 const Departments = () => {

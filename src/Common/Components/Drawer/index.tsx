@@ -1,7 +1,8 @@
-import React, { ElementType } from 'react';
-import { DrawerContextProvider } from './DrawerContext';
-import DrawerHeader from './DrawerHeader';
-import { DrawerBody, DrawerFooter, DrawerTitle } from './DrawerContent';
+import React from "react";
+import type { ElementType } from "react";
+import { DrawerContextProvider } from "./DrawerContext";
+import DrawerHeader from "./DrawerHeader";
+import { DrawerBody, DrawerFooter, DrawerTitle } from "./DrawerContent";
 
 interface DrawerProps {
   children: React.ReactNode;
@@ -12,18 +13,35 @@ interface DrawerProps {
   onHide?: any;
 }
 
-const Drawer = ({ children, className, show, onHide, id, as: Component = "div", ...props }: DrawerProps) => {
-
+const Drawer = ({
+  children,
+  className,
+  show,
+  onHide,
+  id,
+  as: Component = "div",
+  ...props
+}: DrawerProps) => {
   return (
     <React.Fragment>
       <DrawerContextProvider show={show} onHide={onHide}>
         <Component
-          {...props} id={id ? id : ''} className={`${className ? className : ''} ${!show ? "show hidden" : ""}`}
+          {...props}
+          id={id ? id : ""}
+          className={`${className ? className : ""} ${
+            !show ? "show hidden" : ""
+          }`}
         >
           {children}
         </Component>
       </DrawerContextProvider>
-      <div onClick={onHide} className={`fixed inset-0 bg-slate-900/40 dark:bg-zink-800/70 z-[1049] backdrop-overlay ${!show ? "hidden" : ""}`} id="backDropDiv"></div>
+      <div
+        onClick={onHide}
+        className={`fixed inset-0 bg-slate-900/40 dark:bg-zink-800/70 z-[1049] backdrop-overlay ${
+          !show ? "hidden" : ""
+        }`}
+        id="backDropDiv"
+      ></div>
     </React.Fragment>
   );
 };
@@ -32,5 +50,5 @@ export default Object.assign(Drawer, {
   Header: DrawerHeader,
   Title: DrawerTitle,
   Body: DrawerBody,
-  Footer: DrawerFooter
+  Footer: DrawerFooter,
 });

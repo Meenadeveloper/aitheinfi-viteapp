@@ -1,6 +1,6 @@
 import React from "react";
 import ReactApexChart from "react-apexcharts";
-import useChartColors from "Common/useChartColors";
+import useChartColors from "../../../Common/useChartColors";
 import moment from "moment";
 import { dataSeries } from "../Series";
 
@@ -92,7 +92,7 @@ const IrregularTimeseriesChart = ({ chartId }: any) => {
             labels: {
                 rotate: -15,
                 rotateAlways: true,
-                formatter: function (val: any, timestamp: any) {
+                formatter: function ( timestamp: any) {
                     return moment(new Date(timestamp)).format("DD MMM YYYY");
                 }
             }

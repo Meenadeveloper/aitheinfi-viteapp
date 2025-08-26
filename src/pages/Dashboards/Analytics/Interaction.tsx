@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dropdown } from 'Common/Components/Dropdown';
+import { Dropdown } from '../../../Common/Components/Dropdown';
 import { ChevronDown } from 'lucide-react';
 import { InteractionChart } from './Charts';
 import { Link } from 'react-router-dom';

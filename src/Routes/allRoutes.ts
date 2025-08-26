@@ -4,6 +4,7 @@ import InvoiceListView from "../pages/Invoices/ListView";
 import Ecommerce from "../pages/Dashboards/Ecommerce";
 import HomePage from "../pages/Landing/HomePage";
 import LandingPage from "../pages/Landing/LandingPage";
+import KycForm from "../Features/KycForm";
 
 interface RouteObject {
   path: string;
@@ -22,6 +23,7 @@ const publicRoutes = [
   { path: "/", component: HomePage },
   { path: "/welcome", component: LandingPage },
   { path: "/login", component: LoginBoxed },
+  { path: "/kyc-form", component: KycForm },
 ];
 
 export { authRoutes, publicRoutes };

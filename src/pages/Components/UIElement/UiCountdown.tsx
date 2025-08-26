@@ -1,5 +1,5 @@
 import React from "react";
-import BreadCrumb from "Common/BreadCrumb";
+import BreadCrumb from "../../../Common/BreadCrumb";
 import { Clock4, Download, Monitor, Smile } from "lucide-react";
 import CountUp from 'react-countup';
 

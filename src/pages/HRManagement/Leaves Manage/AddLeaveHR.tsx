@@ -1,5 +1,5 @@
 import React from 'react';
-import BreadCrumb from 'Common/BreadCrumb';
+import BreadCrumb from '../../../Common/BreadCrumb';
 import Flatpickr from 'react-flatpickr';
 import Select from 'react-select';
 

@@ -1,5 +1,5 @@
 import React from "react";
-import BreadCrumb from "Common/BreadCrumb";
+import BreadCrumb from "../../../../Common/BreadCrumb";
 import BasicForm from "./BasicForm";
 import InputSizing from "./InputSizing";
 import RangeColor from "./RangeColor";

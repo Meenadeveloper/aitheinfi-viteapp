@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-import BreadCrumb from "Common/BreadCrumb";
+import BreadCrumb from "../../Common/BreadCrumb";
 
 // icons
 import { Search, Plus, Heart, MoreHorizontal, Eye, FileEdit, Trash2, UploadCloud } from 'lucide-react';
-import { Dropdown } from "Common/Components/Dropdown";
+import { Dropdown } from "../../Common/Components/Dropdown";
 import { Link } from "react-router-dom";
-import DeleteModal from "Common/DeleteModal";
-import Modal from "Common/Components/Modal";
+import DeleteModal from "../../Common/DeleteModal";
+import Modal from "../../Common/Components/Modal";
 
 // react-redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -17,15 +17,15 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 
 import {
-    getSellers as onGetSellers,
-    addSellers as onAddSellers,
-    updateSellers as onUpdateSellers,
-    deleteSellers as onDeleteSellers
-} from 'slices/thunk';
+  getSellers as onGetSellers,
+  addSellers as onAddSellers,
+  updateSellers as onUpdateSellers,
+  deleteSellers as onDeleteSellers,
+} from "../../slices/thunk";
 import Dropzone from "react-dropzone";
 import { ToastContainer } from "react-toastify";
-import filterDataBySearch from "Common/filterDataBySearch";
-import Pagination from "Common/Pagination";
+import filterDataBySearch from "../../Common/filterDataBySearch";
+import Pagination from "../../Common/Pagination";
 
 const Sellers = () => {
 

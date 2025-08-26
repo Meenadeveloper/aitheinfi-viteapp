@@ -1,16 +1,16 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import BreadCrumb from 'Common/BreadCrumb';
-import TableContainer from 'Common/TableContainer';
+import BreadCrumb from '../../../Common/BreadCrumb';
+import TableContainer from '../../../Common/TableContainer';
 import Flatpickr from 'react-flatpickr';
-import { Dropdown } from 'Common/Components/Dropdown';
+import { Dropdown } from '../../../Common/Components/Dropdown';
 import moment from "moment";
 
 // Icons
 import { Search, MoreHorizontal, FileEdit, Trash2, Plus } from 'lucide-react';
 
 import { Link } from 'react-router-dom';
-import DeleteModal from 'Common/DeleteModal';
-import Modal from 'Common/Components/Modal';
+import DeleteModal from '../../../Common/DeleteModal';
+import Modal from '../../../Common/Components/Modal';
 
 // react-redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -21,11 +21,11 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 
 import {
-    getExpenses as onGetExpenses,
-    addExpenses as onAddExpenses,
-    updateExpenses as onUpdateExpenses,
-    deleteExpenses as onDeleteExpenses
-} from 'slices/thunk';
+  getExpenses as onGetExpenses,
+  addExpenses as onAddExpenses,
+  updateExpenses as onUpdateExpenses,
+  deleteExpenses as onDeleteExpenses,
+} from "../../../slices/thunk";
 import { ToastContainer } from 'react-toastify';
 
 const Expenses = () => {

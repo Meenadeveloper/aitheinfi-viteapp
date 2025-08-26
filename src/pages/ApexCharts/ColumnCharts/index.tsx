@@ -1,5 +1,4 @@
-import BreadCrumb from 'Common/BreadCrumb';
-import React from 'react';
+import BreadCrumb from '../../../Common/BreadCrumb';
 import { BasicColumnChart } from './BasicColumnChart';
 import { DataLabels } from './DataLabels';
 import { StackedColumns } from './StackedColumns';
@@ -10,7 +9,6 @@ import { ColumnMarkers } from './ColumnMarkers';
 import { ColumnGroupLabel } from './ColumnGroupLabel';
 import { RotatedLabels } from './RotatedLabels';
 import { NegativeValues } from './NegativeValues';
-import { DistributedColumns } from './DistributedColumns';
 
 const ColumnCharts = () => {
     return (
@@ -80,7 +78,7 @@ const ColumnCharts = () => {
                 <div className="card">
                     <div className="card-body">
                         <h6 className="mb-4 text-15">Distributed Columns</h6>
-                        <DistributedColumns chartId="columnDistributedChart" />
+                        {/* <DistributedColumns chartId="columnDistributedChart" /> */}
                     </div>
                 </div>
             </div>

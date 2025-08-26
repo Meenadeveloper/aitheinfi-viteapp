@@ -72,12 +72,12 @@ const UniqueCodeInput: React.FC = () => {
           className={`unique-code-input flex-1 px-4 py-2  
             outline-none transition duration-300 text-center
             ${shake ? "animate-shake unique-code-input-error" : ""}
-            focus:ring-2 focus:ring-blue-400`}
+            focus:ring-1 focus:ring-blue-400`}
         />
         <button
           onClick={handleSubmit}
           disabled={loading}
-          className="absolute right-0 p-2 bg-gray-900 text-white flex items-center justify-center"
+          className="absolute right-0 p-2 top-0 bottom-0 bg-gray-900 text-white flex items-center justify-center"
         >
           {loading ? (
             <CircularProgress size={20} thickness={5} color="inherit" />

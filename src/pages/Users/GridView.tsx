@@ -1,16 +1,16 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import BreadCrumb from 'Common/BreadCrumb';
-import { Dropdown } from 'Common/Components/Dropdown';
+import BreadCrumb from "../../Common/BreadCrumb";
+import { Dropdown } from "../../Common/Components/Dropdown";
 
 // Icons
 import { Search, Eye, Trash2, Plus, MoreHorizontal, FileEdit, SlidersHorizontal, MessagesSquare, ImagePlus } from 'lucide-react';
 
 // Images
-import dummyImg from "assets/images/users/user-dummy-img.jpg";
+import dummyImg from "../../assets/images/users/user-dummy-img.jpg";
 
 import { Link } from 'react-router-dom';
-import DeleteModal from 'Common/DeleteModal';
-import Modal from 'Common/Components/Modal';
+import DeleteModal from "../../Common/DeleteModal";
+import Modal from "../../Common/Components/Modal";
 
 // react-redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -21,15 +21,15 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 
 import {
-    getUserGrid as onGetUserGrid,
-    addUserGrid as onAddUserGrid,
-    updateUserGrid as onUpdateUserGrid,
-    deleteUserGrid as onDeleteUserGrid
-} from 'slices/thunk';
+  getUserGrid as onGetUserGrid,
+  addUserGrid as onAddUserGrid,
+  updateUserGrid as onUpdateUserGrid,
+  deleteUserGrid as onDeleteUserGrid,
+} from "../../slices/thunk";
 import { ToastContainer } from 'react-toastify';
 
-import filterDataBySearch from 'Common/filterDataBySearch';
-import Pagination from 'Common/Pagination';
+import filterDataBySearch from "../../Common/filterDataBySearch";
+import Pagination from "../../Common/Pagination";
 
 const GridView = () => {
 

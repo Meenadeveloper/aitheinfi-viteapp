@@ -1,5 +1,4 @@
-import BreadCrumb from 'Common/BreadCrumb';
-import React from 'react';
+import BreadCrumb from '../../../Common/BreadCrumb';
 import { BasicFunnel, PyramidFunnel } from './BasicFunnel';
 
 const FunnelCharts = () => {

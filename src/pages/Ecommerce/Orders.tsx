@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-import BreadCrumb from "Common/BreadCrumb";
+import BreadCrumb from "../../Common/BreadCrumb";
 import CountUp from 'react-countup';
 import Flatpickr from "react-flatpickr";
 import moment from "moment";
@@ -8,11 +8,11 @@ import moment from "moment";
 import { Boxes, PackagePlus, Loader, Search, Truck, PackageCheck, PackageX, Plus, RefreshCcw, MoreHorizontal, Trash2, Eye, FileEdit } from 'lucide-react';
 import { OrdersOverviewChart } from "./charts";
 import { Link } from "react-router-dom";
-import TableContainer from "Common/TableContainer";
+import TableContainer from "../../Common/TableContainer";
 
-import { Dropdown } from "Common/Components/Dropdown";
-import DeleteModal from "Common/DeleteModal";
-import Modal from "Common/Components/Modal";
+import { Dropdown } from "../../Common/Components/Dropdown";
+import DeleteModal from "../../Common/DeleteModal";
+import Modal from "../../Common/Components/Modal";
 
 // react-redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -23,13 +23,13 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 
 import {
-    getOrders as onGetOrders,
-    addOrders as onAddOrders,
-    updateOrders as onUpdateOrders,
-    deleteOrders as onDeleteOrders
-} from 'slices/thunk';
+  getOrders as onGetOrders,
+  addOrders as onAddOrders,
+  updateOrders as onUpdateOrders,
+  deleteOrders as onDeleteOrders,
+} from "../../slices/thunk";
 import { ToastContainer } from "react-toastify";
-import filterDataBySearch from "Common/filterDataBySearch";
+import filterDataBySearch from "../../Common/filterDataBySearch";
 
 const Orders = () => {
 

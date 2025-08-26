@@ -1,5 +1,5 @@
 import React from "react";
-import { cardData } from "Common/data";
+import { cardData } from "../../../Common/data";
 
 const Contacts = () => {
     return (

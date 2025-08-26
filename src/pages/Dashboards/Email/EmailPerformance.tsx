@@ -1,8 +1,8 @@
 import React, { useMemo, useState } from 'react';
-import TableContainer from 'Common/TableContainer';
+import TableContainer from '../../../Common/TableContainer';
 import { Search } from 'lucide-react';
-import { EmailPerformanceData } from "Common/data";
-import filterDataBySearch from 'Common/filterDataBySearch';
+import { EmailPerformanceData } from "../../../Common/data";
+import filterDataBySearch from '../../../Common/filterDataBySearch';
 
 const EmailPerformance = () => {
 
@@ -20,7 +20,7 @@ const EmailPerformance = () => {
             header: () => <input id="emailPerfomanceCheckAll" className="size-4 cursor-pointer bg-white border border-slate-200 checked:bg-none dark:bg-zink-700 dark:border-zink-500 rounded-sm appearance-none arrow-none relative after:absolute after:content-['\eb7b'] after:top-0 after:left-0 after:font-remix after:leading-none after:opacity-0 checked:after:opacity-100 after:text-custom-500 checked:border-custom-500 dark:after:text-custom-500 dark:checked:border-custom-800" type="checkbox" />,
             id: "id",
             enableSorting: false,
-            cell: (cell: any) => (
+            cell: () => (
                 <div className="flex items-center h-full">
                     <input id="emailPerfomanceCheck1" className="size-4 cursor-pointer bg-white border border-slate-200 checked:bg-none dark:bg-zink-700 dark:border-zink-500 rounded-sm appearance-none arrow-none relative after:absolute after:content-['\eb7b'] after:top-0 after:left-0 after:font-remix after:leading-none after:opacity-0 checked:after:opacity-100 after:text-custom-500 checked:border-custom-500 dark:after:text-custom-500 dark:checked:border-custom-800" type="checkbox" />
                 </div>

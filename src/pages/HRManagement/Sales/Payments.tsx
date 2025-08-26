@@ -1,8 +1,8 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import BreadCrumb from 'Common/BreadCrumb';
+import BreadCrumb from "../../../Common/BreadCrumb";
 import { Link } from 'react-router-dom';
 import Flatpickr from 'react-flatpickr';
-import TableContainer from 'Common/TableContainer';
+import TableContainer from "../../../Common/TableContainer";
 import Select from 'react-select';
 // Icons
 import { Search } from 'lucide-react';
@@ -11,9 +11,7 @@ import { Search } from 'lucide-react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import {
-    getPayments as onGetPayments
-} from 'slices/thunk';
+import { getPayments as onGetPayments } from "../../../slices/thunk";
 
 const Payments = () => {
 

@@ -1,5 +1,5 @@
 import React from "react";
-import BreadCrumb from "Common/BreadCrumb";
+import BreadCrumb from "../../../../Common/BreadCrumb";
 import CardTitle from "./CardTitle";
 import HorizontalCard from "./HorizontalCard";
 import CardAnimation from "./CardAnimation";

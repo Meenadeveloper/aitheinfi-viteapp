@@ -1,36 +1,34 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import BreadCrumb from 'Common/BreadCrumb';
+import BreadCrumb from "../../Common/BreadCrumb";
 import { Link } from 'react-router-dom';
-import { Dropdown } from 'Common/Components/Dropdown';
-import TableContainer from 'Common/TableContainer';
+import { Dropdown } from "../../Common/Components/Dropdown";
+import TableContainer from "../../Common/TableContainer";
 
 // Icons
 import { Plus, UserRoundX, BadgeCheck, Home, UserRound, CalendarDays, Clapperboard, ShoppingCart, Settings, ChevronDown, Search } from 'lucide-react';
 
 // Images
-import avatar1 from "assets/images/users/avatar-1.png";
-import avatar2 from "assets/images/users/avatar-2.png";
-import avatar3 from "assets/images/users/avatar-3.png";
-import avatar4 from "assets/images/users/avatar-4.png";
-import avatar5 from "assets/images/users/avatar-5.png";
-import avatar6 from "assets/images/users/avatar-6.png";
-import avatar7 from "assets/images/users/avatar-7.png";
-import avatar8 from "assets/images/users/avatar-8.png";
-import avatar9 from "assets/images/users/avatar-9.png";
-import avatar10 from "assets/images/users/avatar-10.png";
+import avatar1 from "../../assets/images/users/avatar-1.png";
+import avatar2 from "../../assets/images/users/avatar-2.png";
+import avatar3 from "../../assets/images/users/avatar-3.png";
+import avatar4 from "../../assets/images/users/avatar-4.png";
+import avatar5 from "../../assets/images/users/avatar-5.png";
+import avatar6 from "../../assets/images/users/avatar-6.png";
+import avatar7 from "../../assets/images/users/avatar-7.png";
+import avatar8 from "../../assets/images/users/avatar-8.png";
+import avatar9 from "../../assets/images/users/avatar-9.png";
+import avatar10 from "../../assets/images/users/avatar-10.png";
 
-import adwords from "assets/images/brand/adwords.png";
-import twitter from "assets/images/brand/twitter.png";
-import meta from "assets/images/brand/meta.png";
-import figma from "assets/images/brand/figma.png";
+import adwords from "../../assets/images/brand/adwords.png";
+import twitter from "../../assets/images/brand/twitter.png";
+import meta from "../../assets/images/brand/meta.png";
+import figma from "../../assets/images/brand/figma.png";
 
 // react-redux
 import { useDispatch, useSelector } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import {
-    getSocialFriends as onGetSocialFriends
-} from 'slices/thunk';
+import { getSocialFriends as onGetSocialFriends } from "../../slices/thunk";
 
 const Friends = () => {
 

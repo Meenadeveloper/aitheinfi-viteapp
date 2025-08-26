@@ -1,4 +1,4 @@
-import { Dropdown } from 'Common/Components/Dropdown';
+import { Dropdown } from '../../../Common/Components/Dropdown';
 import { Info, MoreVertical } from 'lucide-react';
 import React from 'react';
 import { UserDeviceChart } from './Charts';

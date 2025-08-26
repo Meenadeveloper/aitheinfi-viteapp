@@ -8,7 +8,7 @@ import twitter from "assets/images/brand/twitter.png";
 import meta from "assets/images/brand/meta.png";
 import figma from "assets/images/brand/figma.png";
 
-import { activeFriendsData } from "Common/data";
+import { activeFriendsData } from "../../../Common/data";
 
 // Icons
 import { BadgeCheck, Home, UserRound, CalendarDays, Clapperboard, ShoppingCart, Settings } from 'lucide-react';

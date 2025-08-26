@@ -1,8 +1,8 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { logoutUser } from "slices/thunk";
+import { logoutUser } from "../../slices/thunk";
 import { Navigate } from "react-router-dom";
-import { RootState } from "slices";
+import type { RootState } from "../../slices";
 import { createSelector } from 'reselect';
 
 interface selectLogoutState {

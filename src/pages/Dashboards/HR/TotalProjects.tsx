@@ -3,7 +3,7 @@ import { TotalProjectsChart } from './Charts';
 
 // Icons
 import { MoreVertical } from 'lucide-react';
-import { Dropdown } from 'Common/Components/Dropdown';
+import { Dropdown } from '../../../Common/Components/Dropdown';
 import { Link } from 'react-router-dom';
 
 const TotalProjects = () => {

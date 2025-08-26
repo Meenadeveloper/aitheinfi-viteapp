@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import BreadCrumb from 'Common/BreadCrumb';
-import TableContainer from 'Common/TableContainer';
+import BreadCrumb from '../../../Common/BreadCrumb';
+import TableContainer from '../../../Common/TableContainer';
 import CountUp from 'react-countup';
 import { Link } from 'react-router-dom';
 
@@ -13,8 +13,8 @@ import { createSelector } from 'reselect';
 
 import {
     getLeaveManageEmployee as onGetLeaveManageEmployee
-} from 'slices/thunk';
-import filterDataBySearch from 'Common/filterDataBySearch';
+} from '../../../slices/thunk';
+import filterDataBySearch from '../../../Common/filterDataBySearch';
 
 const LeaveManageEmployee = () => {
 

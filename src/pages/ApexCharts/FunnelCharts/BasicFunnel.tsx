@@ -1,6 +1,6 @@
 import React from "react";
 import ReactApexChart from "react-apexcharts";
-import useChartColors from "Common/useChartColors";
+import useChartColors from "../../../Common/useChartColors";
 
 const BasicFunnel = ({ chartId }: any) => {
 
@@ -96,7 +96,7 @@ const PyramidFunnel = ({ chartId }: any) => {
         colors: chartColors,
         dataLabels: {
             enabled: true,
-            formatter: function (val : any, opt : any) {
+            formatter: function ( opt : any) {
                 return opt.w.globals.labels[opt.dataPointIndex]
             },
             dropShadow: {

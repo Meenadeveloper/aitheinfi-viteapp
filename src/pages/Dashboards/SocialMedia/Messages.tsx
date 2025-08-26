@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Search } from 'lucide-react';
 
-import { MessageData, PopularEventsData, UpcomingBirthdayData } from "Common/data";
+import { MessageData, PopularEventsData, UpcomingBirthdayData } from "../../../Common/data";
 import { Link } from "react-router-dom";
-import filterDataBySearch from "Common/filterDataBySearch";
+import filterDataBySearch from "../../../Common/filterDataBySearch";
 
 const Messages = () => {
 

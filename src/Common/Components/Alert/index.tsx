@@ -1,4 +1,6 @@
-import React, { ElementType, ReactNode } from "react";
+import React from "react";
+import type { ElementType, ReactNode } from "react";
+
 import { AlertContextProvider, useAlertContext } from "./AlertContext";
 import { AlertCircle, X } from "lucide-react";
 

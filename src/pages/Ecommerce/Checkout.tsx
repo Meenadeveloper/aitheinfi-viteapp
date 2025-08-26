@@ -1,20 +1,20 @@
 import React from 'react';
-import BreadCrumb from 'Common/BreadCrumb';
+import BreadCrumb from '../../Common/BreadCrumb';
 import Select from 'react-select';
 
 // Image
-import paymentImg01 from "assets/images/payment/img-01.png";
-import paymentImg02 from "assets/images/payment/img-02.png";
-import paymentImg03 from "assets/images/payment/img-03.png";
-import paymentImg04 from "assets/images/payment/img-04.png";
+import paymentImg01 from "../../assets/images/payment/img-01.png";
+import paymentImg02 from "../../assets/images/payment/img-02.png";
+import paymentImg03 from "../../assets/images/payment/img-03.png";
+import paymentImg04 from "../../assets/images/payment/img-04.png";
 
-import productImg01 from "assets/images/product/img-01.png";
-import productImg04 from "assets/images/product/img-04.png";
-import productImg08 from "assets/images/product/img-08.png";
+import productImg01 from "../../assets/images/product/img-01.png";
+import productImg04 from "../../assets/images/product/img-04.png";
+import productImg08 from "../../assets/images/product/img-08.png";
 
-import delivery1 from "assets/images/brand/delivery-1.png";
-import delivery2 from "assets/images/brand/delivery-2.png";
-import delivery3 from "assets/images/brand/delivery-3.png";
+import delivery1 from "../../assets/images/brand/delivery-1.png";
+import delivery2 from "../../assets/images/brand/delivery-2.png";
+import delivery3 from "../../assets/images/brand/delivery-3.png";
 
 // Icon
 import { ShoppingBag, ChevronLeft, MoveRight } from 'lucide-react';

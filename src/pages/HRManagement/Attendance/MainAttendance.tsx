@@ -1,20 +1,20 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import BreadCrumb from 'Common/BreadCrumb';
+import BreadCrumb from '../../../Common/BreadCrumb';
 import Flatpickr from 'react-flatpickr';
 import CountUp from 'react-countup';
 
 // Icons
 import { Search, Check, X, UsersRound, UserRoundX, UserRoundCheck, Briefcase, CalendarRange } from 'lucide-react';
-import TableContainer from 'Common/TableContainer';
+import TableContainer from "../../../Common/TableContainer";
 import { Link } from 'react-router-dom';
-import Modal from 'Common/Components/Modal';
+import Modal from "../../../Common/Components/Modal";
 
 // react-redux
 import { useDispatch, useSelector } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import { getMainAttendance as onGetMainAttendance } from 'slices/thunk';
-import filterDataBySearch from 'Common/filterDataBySearch';
+import { getMainAttendance as onGetMainAttendance } from "../../../slices/thunk";
+import filterDataBySearch from "../../../Common/filterDataBySearch";
 
 const MainAttendance = () => {
 

@@ -1,4 +1,4 @@
-import { Dropdown } from 'Common/Components/Dropdown';
+import { Dropdown } from '../../../Common/Components/Dropdown';
 import { ChevronDown } from 'lucide-react';
 import React from 'react';
 import { EmailDataChart } from './Charts';

@@ -1,11 +1,11 @@
 import React, { useMemo, useState } from 'react';
-import TableContainer from 'Common/TableContainer';
+import TableContainer from '../../../Common/TableContainer';
 import { Link } from 'react-router-dom';
-import { EmployeePerformanceData } from 'Common/data';
+import { EmployeePerformanceData } from '../../../Common/data';
 
 // Icons
 import { Search, Trash2, Pencil } from 'lucide-react';
-import filterDataBySearch from 'Common/filterDataBySearch';
+import filterDataBySearch from '../../../Common/filterDataBySearch';
 
 const EmployeePerformance = () => {
 
@@ -88,7 +88,7 @@ const EmployeePerformance = () => {
             header: "Action",
             enableColumnFilter: false,
             enableSorting: true,
-            cell: (cell: any) => (
+            cell: () => (
                 <div className="flex gap-2">
                     <Link to="#" className="flex items-center justify-center size-8 transition-all duration-200 ease-linear rounded-md bg-slate-100 dark:bg-zink-600 dark:text-zink-200 text-slate-500 hover:text-custom-500 dark:hover:text-custom-500 hover:bg-custom-100 dark:hover:bg-custom-500/20"><Pencil className="size-4" /></Link>
                     <Link to="#" className="flex items-center justify-center size-8 transition-all duration-200 ease-linear rounded-md bg-slate-100 dark:bg-zink-600 dark:text-zink-200 text-slate-500 hover:text-red-500 dark:hover:text-red-500 hover:bg-red-100 dark:hover:bg-red-500/20"><Trash2 className="size-4" /></Link>

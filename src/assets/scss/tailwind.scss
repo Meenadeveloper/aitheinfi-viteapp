@@ -7,7 +7,7 @@ Contact: Themesdesign@gmail.com
 File: tailwind scss File
 */
 
-@import "fonts/fonts";
+// @import "fonts/fonts";
 
 @tailwind base;
 @tailwind components;
@@ -16,6 +16,9 @@ File: tailwind scss File
 @import "plugins/gridjs";
 @import "plugins/select";
 @import "plugins/multi-select";
+
+
+
 
 
 

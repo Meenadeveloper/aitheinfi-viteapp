@@ -1,5 +1,4 @@
-import BreadCrumb from 'Common/BreadCrumb';
-import React from 'react';
+import BreadCrumb from '../../../Common/BreadCrumb';
 import { BasicAreaChart } from './BasicAreaChart';
 import { SplineChart } from './SplineChart';
 import { DatetimeChart } from './DatetimeChart';

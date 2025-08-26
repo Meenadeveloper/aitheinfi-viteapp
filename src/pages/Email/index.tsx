@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import BreadCrumb from "Common/BreadCrumb";
+import BreadCrumb from "../../Common/BreadCrumb";
 import { Link } from "react-router-dom";
 
 // Images
@@ -9,7 +9,7 @@ import avatar5 from "assets/images/users/avatar-5.png";
 // Icons
 import { Inbox, Star, PenSquare, StepForward, AlertOctagon, CircleUser, Trash2, RadioTower, Squirrel, FileText, Tag, CircleDot, RefreshCw, ArchiveRestore, Mail, Clock, Search, MoreHorizontal, ChevronsLeft, Printer, Mic, Image, Send, Plus, StarOff } from 'lucide-react';
 import SimpleBar from "simplebar-react";
-import { Dropdown } from "Common/Components/Dropdown";
+import { Dropdown } from "../../Common/Components/Dropdown";
 
 import { createSelector } from "reselect";
 
@@ -22,11 +22,11 @@ import {
     staredMail as onStaredMail,
     trashMail as onTrashMail,
     deleteMail as onDeleteMail
-} from 'slices/thunk';
+} from '../../slices/thunk';
 
 import { ToastContainer, toast } from 'react-toastify';
-import DeleteModal from "Common/DeleteModal";
-import Modal from "Common/Components/Modal";
+import DeleteModal from "../../Common/DeleteModal";
+import Modal from "../../Common/Components/Modal";
 
 const Mailbox = () => {
     const dispatch = useDispatch<any>();

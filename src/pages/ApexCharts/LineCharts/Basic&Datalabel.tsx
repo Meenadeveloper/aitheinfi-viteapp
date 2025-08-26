@@ -1,5 +1,5 @@
 import React from "react";
-import useChartColors from "Common/useChartColors";
+import useChartColors from "../../../Common/useChartColors";
 import ReactApexChart from "react-apexcharts";
 
 const BasicLine = ({ chartId }: any) => {

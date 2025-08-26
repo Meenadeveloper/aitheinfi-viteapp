@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import BreadCrumb from 'Common/BreadCrumb';
+import BreadCrumb from "../../Common/BreadCrumb";
 import Flatpickr from "react-flatpickr";
 import moment from "moment";
 import { Calendar } from "lucide-react";
@@ -7,10 +7,10 @@ import { Calendar } from "lucide-react";
 
 // Icons
 import { Search, Plus, Trash2, MoreHorizontal, Star, FileEdit, Eye, User2 } from 'lucide-react';
-import { Dropdown } from 'Common/Components/Dropdown';
+import { Dropdown } from "../../Common/Components/Dropdown";
 import { Link } from 'react-router-dom';
-import DeleteModal from 'Common/DeleteModal';
-import Modal from 'Common/Components/Modal';
+import DeleteModal from "../../Common/DeleteModal";
+import Modal from "../../Common/Components/Modal";
 
 // react-redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -21,14 +21,14 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 
 import {
-    getNotes as onGetNotes,
-    addNotes as onAddNotes,
-    updateNotes as onUpdateNotes,
-    deleteNotes as onDeleteNotes
-} from 'slices/thunk';
+  getNotes as onGetNotes,
+  addNotes as onAddNotes,
+  updateNotes as onUpdateNotes,
+  deleteNotes as onDeleteNotes,
+} from "../../slices/thunk";
 import { ToastContainer } from 'react-toastify';
-import filterDataBySearch from 'Common/filterDataBySearch';
-import Pagination from 'Common/Pagination';
+import filterDataBySearch from "../../Common/filterDataBySearch";
+import Pagination from "../../Common/Pagination";
 
 const Index = () => {
 

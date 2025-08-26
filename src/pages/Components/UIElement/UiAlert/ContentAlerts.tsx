@@ -1,5 +1,5 @@
 import React from "react";
-import Alert from "Common/Components/Alert";
+import Alert from "../../../../Common/Components/Alert";
 import { AlertCircle, AlertTriangle, CheckCircle, MoveRight } from "lucide-react";
 
 const ContentAlerts = () => {

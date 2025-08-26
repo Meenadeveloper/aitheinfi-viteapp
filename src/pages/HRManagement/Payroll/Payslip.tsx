@@ -1,5 +1,5 @@
 import React from 'react';
-import BreadCrumb from 'Common/BreadCrumb';
+import BreadCrumb from '../../../Common/BreadCrumb';
 
 // Images
 import logoSm from "assets/images/logo-sm.png";

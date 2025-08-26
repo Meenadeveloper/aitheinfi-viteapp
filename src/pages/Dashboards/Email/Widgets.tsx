@@ -1,7 +1,7 @@
 import React from 'react';
 import { Widget2Chart, WidgetChart } from './Charts';
 import CountUp from 'react-countup';
-import { widgetsData, widgetsData2 } from 'Common/data';
+import { widgetsData, widgetsData2 } from '../../../Common/data';
 import { Info } from 'lucide-react';
 import { Link } from 'react-router-dom';
 

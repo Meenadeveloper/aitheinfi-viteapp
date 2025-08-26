@@ -1,5 +1,5 @@
 import React from "react";
-import BreadCrumb from "Common/BreadCrumb";
+import BreadCrumb from "../../../../Common/BreadCrumb";
 import BasicPagination from "./BasicPagination";
 import BorderedPagination from "./BorderedPagination";
 import SizesPagination from "./SizesPagination";

@@ -1,24 +1,28 @@
-import React, { ElementType } from "react";
+import React from "react";
+import type { ElementType } from "react";
 import { useDrawerContext } from "./DrawerContext";
 
 interface DrawerHeaderProps {
-    className?: string;
-    children?: React.ReactNode;
-    closeButtonClass?: string;
-    as?: ElementType
+  className?: string;
+  children?: React.ReactNode;
+  closeButtonClass?: string;
+  as?: ElementType;
 }
 
-const DrawerHeader = ({ children, className, closeButtonClass, as: Component = "button", ...props }: DrawerHeaderProps) => {
-    const { onHide } = useDrawerContext();
+const DrawerHeader = ({
+  children,
+  className,
+//   closeButtonClass,
+  as: Component = "button",
+//   ...props
+}: DrawerHeaderProps) => {
+  const { onHide } = useDrawerContext();
 
-    return (
-        <Component
-            className={className ? className : ''}
-            onClick={onHide}
-        >
-            {children}
-        </Component>
-    );
-}
+  return (
+    <Component className={className ? className : ""} onClick={onHide}>
+      {children}
+    </Component>
+  );
+};
 
 export default DrawerHeader;

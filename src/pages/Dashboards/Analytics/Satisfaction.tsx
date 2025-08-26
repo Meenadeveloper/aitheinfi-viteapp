@@ -1,7 +1,7 @@
 import { Info, MoreVertical } from 'lucide-react';
 import React from 'react';
 import { SatisfactionChart } from './Charts';
-import { Dropdown } from 'Common/Components/Dropdown';
+import { Dropdown } from '../../../Common/Components/Dropdown';
 import { Link } from 'react-router-dom';
 
 const Satisfaction = () => {

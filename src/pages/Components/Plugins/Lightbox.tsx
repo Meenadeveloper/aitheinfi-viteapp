@@ -1,5 +1,5 @@
 import React from "react";
-import BreadCrumb from "Common/BreadCrumb";
+import BreadCrumb from "../../../Common/BreadCrumb";
 import { SlideshowLightbox } from 'lightbox.js-react'
 // import 'lightbox.js-react/dist/index.css'
 

@@ -1,5 +1,5 @@
 import React from "react";
-import BreadCrumb from "Common/BreadCrumb";
+import BreadCrumb from "../../../../Common/BreadCrumb";
 import GalleryContent from "./GalleryContent";
 import OverlayContent from "./OverlayContent";
 import GalleryAnimation from "./GalleryAnimation";

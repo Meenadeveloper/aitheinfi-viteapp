@@ -1,12 +1,12 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import BreadCrumb from 'Common/BreadCrumb';
-import TableContainer from 'Common/TableContainer';
+import BreadCrumb from '../../../Common/BreadCrumb';
+import TableContainer from '../../../Common/TableContainer';
 import CountUp from 'react-countup';
 
 // Icons
 import { Search, Plus, Trash2, Pencil, Check, FileBarChart2, CalendarCheck, Codepen, Loader } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import DeleteModal from 'Common/DeleteModal';
+import DeleteModal from '../../../Common/DeleteModal';
 
 // react-redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -15,9 +15,9 @@ import { createSelector } from 'reselect';
 import {
     getLeaveManageHR as onGetLeaveManageHR,
     deleteLeaveManageHR as onDeleteLeaveManageHR
-} from 'slices/thunk';
+} from '../../../slices/thunk';
 import { ToastContainer } from 'react-toastify';
-import filterDataBySearch from 'Common/filterDataBySearch';
+import filterDataBySearch from '../../../Common/filterDataBySearch';
 
 const LeaveManageHR = () => {
 

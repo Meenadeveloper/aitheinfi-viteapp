@@ -1,4 +1,4 @@
-import BreadCrumb from 'Common/BreadCrumb'
+import BreadCrumb from '../../../Common/BreadCrumb'
 import React from 'react'
 import { BasicTimeline, DiffColor } from './BasicDiffColor'
 import { Advancedranges, MultiSeries } from './MultiAdvanced'

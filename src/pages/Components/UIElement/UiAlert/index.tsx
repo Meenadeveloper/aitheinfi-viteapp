@@ -1,12 +1,12 @@
 import React from "react";
-import BreadCrumb from "Common/BreadCrumb";
+import BreadCrumb from "../../../../Common/BreadCrumb";
 import BasicAlerts from "./BasicAlerts";
 import OutlineAlerts from "./OutlineAlerts";
 import BorderedAlerts from "./BorderedAlerts";
 import DismissAlerts from "./DismissAlerts";
 import IconAlerts from "./IconAlerts";
 import ImagesAlerts from "./ImagesAlerts";
-import Alert from "Common/Components/Alert";
+import Alert from "../../../../Common/Components/Alert";
 import ContentAlerts from "./ContentAlerts";
 import FillSolidAlerts from "./FillSolidAlerts";
 

@@ -1,5 +1,4 @@
-import BreadCrumb from 'Common/BreadCrumb';
-import React from 'react';
+import BreadCrumb from '../../../Common/BreadCrumb';
 import { BasicChart } from './BasicChart';
 import { CandlestickSynced, ComboCandlestick } from './CandlestickSynced';
 import { CategoryXaxis } from './CategoryXaxis';

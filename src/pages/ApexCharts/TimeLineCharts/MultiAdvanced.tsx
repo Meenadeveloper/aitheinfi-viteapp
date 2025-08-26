@@ -1,4 +1,4 @@
-import useChartColors from 'Common/useChartColors';
+import useChartColors from '../../../Common/useChartColors';
 import moment from 'moment';
 import React from 'react'
 import ReactApexChart from 'react-apexcharts';

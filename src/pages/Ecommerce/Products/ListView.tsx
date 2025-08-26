@@ -1,14 +1,14 @@
 import React, { useEffect, useMemo, useState } from "react";
-import BreadCrumb from "Common/BreadCrumb";
+import BreadCrumb from "../../../Common/BreadCrumb";
 import Flatpickr from 'react-flatpickr';
 import { Link } from "react-router-dom";
-import { Dropdown } from "Common/Components/Dropdown";
+import { Dropdown } from "../../../Common/Components/Dropdown";
 
 // Icon
 import { MoreHorizontal, Eye, FileEdit, Trash2, Search, Plus } from 'lucide-react';
 
-import TableContainer from "Common/TableContainer";
-import DeleteModal from "Common/DeleteModal";
+import TableContainer from "../../../Common/TableContainer";
+import DeleteModal from "../../../Common/DeleteModal";
 
 // react-redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -17,9 +17,9 @@ import { createSelector } from 'reselect';
 import {
     getProductList as onGetProductList,
     deleteProductList as onDeleteProductList
-} from 'slices/thunk';
+} from '../../../slices/thunk';
 import { ToastContainer } from "react-toastify";
-import filterDataBySearch from "Common/filterDataBySearch";
+import filterDataBySearch from "../../../Common/filterDataBySearch";
 
 const ListView = () => {
 

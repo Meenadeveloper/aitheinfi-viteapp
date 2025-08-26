@@ -1,14 +1,14 @@
 import React from "react";
-import BreadCrumb from "Common/BreadCrumb";
+import BreadCrumb from "../../Common/BreadCrumb";
 
 // Images
-import avatar4 from "assets/images/users/avatar-4.png";
+import avatar4 from "../../assets/images/users/avatar-4.png";
 
-import delivery1 from "assets/images/brand/delivery-1.png";
+import delivery1 from "../../assets/images/brand/delivery-1.png";
 
-import productImg01 from "assets/images/product/img-01.png";
-import productImg04 from "assets/images/product/img-04.png";
-import productImg08 from "assets/images/product/img-08.png";
+import productImg01 from "../../assets/images/product/img-01.png";
+import productImg04 from "../../assets/images/product/img-04.png";
+import productImg08 from "../../assets/images/product/img-08.png";
 
 // icons
 import { Truck, CreditCard, CircleDollarSign, Download } from 'lucide-react';

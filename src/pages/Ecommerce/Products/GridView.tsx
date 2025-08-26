@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
-import BreadCrumb from "Common/BreadCrumb";
+import BreadCrumb from "../../../Common/BreadCrumb";
 
 // Icon
 import { Search, ChevronDown, ChevronUp, Star, List, LayoutGrid, X, Heart, ShoppingCart, MoreHorizontal, Eye, FileEdit, Trash2, ChevronLeft, ChevronRight } from 'lucide-react';
 
-import { Dropdown } from "Common/Components/Dropdown";
+import { Dropdown } from "../../../Common/Components/Dropdown";
 import { Link } from "react-router-dom";
-import DeleteModal from "Common/DeleteModal";
+import DeleteModal from "../../../Common/DeleteModal";
 
 // react-redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -15,7 +15,7 @@ import { createSelector } from 'reselect';
 import {
     getProductGrid as onGetProductGrid,
     deleteProductGrid as onDeleteProductGrid
-} from 'slices/thunk';
+} from '../../../slices/thunk';
 import { ToastContainer } from "react-toastify";
 
 const GridView = () => {

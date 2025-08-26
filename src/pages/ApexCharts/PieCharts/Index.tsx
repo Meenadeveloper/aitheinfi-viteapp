@@ -1,4 +1,4 @@
-import BreadCrumb from 'Common/BreadCrumb'
+import BreadCrumb from '../../../Common/BreadCrumb'
 import React from 'react'
 import { DonutUpdate, GradientDonut, ImagePie, MonochromePie, PatternDonut, SemiDonut, SimpleDonut, SimplePie } from './Charts'
 

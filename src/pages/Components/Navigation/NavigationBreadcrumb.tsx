@@ -1,4 +1,4 @@
-import BreadCrumb from "Common/BreadCrumb";
+import BreadCrumb from "../../../Common/BreadCrumb";
 import { Home, Settings, User2 } from "lucide-react";
 import React from "react";
 

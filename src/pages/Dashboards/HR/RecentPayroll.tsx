@@ -1,17 +1,17 @@
 import React from "react";
 
 // Images
-import avatar6 from "assets/images/users/avatar-6.png";
-import birthday from "assets/images/birthday.png";
+import avatar6 from "../../../assets/images/users/avatar-6.png";
+import birthday from "../../../assets/images/birthday.png";
 
-import { RecentPayrollData } from "Common/data";
+import { RecentPayrollData } from "../../../Common/data";
 
 // Icons
 import { MoveUpRight, MoveDownLeft, MoreVertical } from 'lucide-react';
 
 // SimpleBar
 import SimpleBar from 'simplebar-react';
-import { Dropdown } from "Common/Components/Dropdown";
+import { Dropdown } from "../../../Common/Components/Dropdown";
 import { Link } from "react-router-dom";
 
 const RecentPayroll = () => {

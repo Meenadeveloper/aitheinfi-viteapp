@@ -1,7 +1,7 @@
 import React from "react";
-import AuthIcon from "pages/AuthenticationInner/AuthIcon";
+import AuthIcon from "../../pages/AuthenticationInner/AuthIcon";
 import { useDispatch, useSelector } from "react-redux";
-import { registerUser, resetRegisterFlag } from "slices/thunk";
+import { registerUser, resetRegisterFlag } from "../../slices/thunk";
 import { createSelector } from 'reselect';
 import { Facebook, Github, Mail, Twitter } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
@@ -13,7 +13,7 @@ import { useFormik as useFormic } from "formik";
 // Image
 import logoLight from "assets/images/logo-light.png";
 import logoDark from "assets/images/logo-dark.png";
-import { RootState } from "slices";
+import type { RootState } from "../../slices";
 
 const Register = () => {
 
@@ -23,11 +23,11 @@ const Register = () => {
     const navigation = useNavigate(); // Use the useNavigate hook
 
     const selectRegister = createSelector(
-        (state: RootState) => state.Register,
-        (register) => ({
-            success: register.success
-        })
-    )
+      (state: RootState) => state.Register,
+      (register) => ({
+        success: register.success,
+      })
+    );
 
     const { success } = useSelector(selectRegister)
 
@@ -37,8 +37,8 @@ const Register = () => {
 
         initialValues: {
             email: "admin@themesbrand.com",
-            username: "admin" || '',
-            password: "123456" || '',
+            username:  '',
+            password: '',
         },
         validationSchema: Yup.object({
             email: Yup.string().email().required("Please Enter Your Email"),

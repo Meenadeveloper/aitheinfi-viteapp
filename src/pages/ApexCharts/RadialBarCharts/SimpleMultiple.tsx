@@ -1,4 +1,4 @@
-import useChartColors from 'Common/useChartColors';
+import useChartColors from '../../../Common/useChartColors';
 import React from 'react'
 import ReactApexChart from 'react-apexcharts'
 
@@ -59,7 +59,7 @@ const MultipleRadial = ({ chartId }: any) => {
                     total: {
                         show: true,
                         label: 'Total',
-                        formatter: function (w : any) {
+                        formatter: function () {
                             return 249
                         }
                     }

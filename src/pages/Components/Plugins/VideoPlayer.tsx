@@ -1,6 +1,8 @@
 import React from "react";
-import BreadCrumb from "Common/BreadCrumb";
-import Plyr, { APITypes } from "plyr-react";
+import BreadCrumb from "../../../Common/BreadCrumb";
+import Plyr from "plyr-react";
+import type { APITypes } from "plyr-react";
+
 import "plyr-react/plyr.css";
 
 const videoId = "qYgogv4R8zg";

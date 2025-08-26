@@ -1,34 +1,34 @@
 import React from 'react';
-import BreadCrumb from 'Common/BreadCrumb';
+import BreadCrumb from "../../Common/BreadCrumb";
 
 // Icons
 import { Search, Plus, BadgeCheck, Home, UserRound, CalendarDays, Clapperboard, ShoppingCart, Settings, Bookmark } from 'lucide-react';
 
 // Images
-import avatar1 from "assets/images/users/avatar-1.png";
-import avatar2 from "assets/images/users/avatar-2.png";
-import avatar3 from "assets/images/users/avatar-3.png";
-import avatar4 from "assets/images/users/avatar-4.png";
-import avatar5 from "assets/images/users/avatar-5.png";
-import avatar6 from "assets/images/users/avatar-6.png";
-import avatar7 from "assets/images/users/avatar-7.png";
-import avatar8 from "assets/images/users/avatar-8.png";
-import avatar9 from "assets/images/users/avatar-9.png";
-import avatar10 from "assets/images/users/avatar-10.png";
+import avatar1 from "../../assets/images/users/avatar-1.png";
+import avatar2 from "../../assets/images/users/avatar-2.png";
+import avatar3 from "../../assets/images/users/avatar-3.png";
+import avatar4 from "../../assets/images/users/avatar-4.png";
+import avatar5 from "../../assets/images/users/avatar-5.png";
+import avatar6 from "../../assets/images/users/avatar-6.png";
+import avatar7 from "../../assets/images/users/avatar-7.png";
+import avatar8 from "../../assets/images/users/avatar-8.png";
+import avatar9 from "../../assets/images/users/avatar-9.png";
+import avatar10 from "../../assets/images/users/avatar-10.png";
 
-import productImg01 from "assets/images/product/img-01.png";
-import productImg02 from "assets/images/product/img-02.png";
-import productImg03 from "assets/images/product/img-03.png";
-import productImg04 from "assets/images/product/img-04.png";
-import productImg05 from "assets/images/product/img-05.png";
-import productImg06 from "assets/images/product/img-06.png";
-import productImg07 from "assets/images/product/img-07.png";
-import productImg08 from "assets/images/product/img-08.png";
+import productImg01 from "../../assets/images/product/img-01.png";
+import productImg02 from "../../assets/images/product/img-02.png";
+import productImg03 from "../../assets/images/product/img-03.png";
+import productImg04 from "../../assets/images/product/img-04.png";
+import productImg05 from "../../assets/images/product/img-05.png";
+import productImg06 from "../../assets/images/product/img-06.png";
+import productImg07 from "../../assets/images/product/img-07.png";
+import productImg08 from "../../assets/images/product/img-08.png";
 
-import adwords from "assets/images/brand/adwords.png";
-import twitter from "assets/images/brand/twitter.png";
-import meta from "assets/images/brand/meta.png";
-import figma from "assets/images/brand/figma.png";
+import adwords from "../../assets/images/brand/adwords.png";
+import twitter from "../../assets/images/brand/twitter.png";
+import meta from "../../assets/images/brand/meta.png";
+import figma from "../../assets/images/brand/figma.png";
 import { Link } from 'react-router-dom';
 
 const Marketplace = () => {

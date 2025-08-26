@@ -1,5 +1,5 @@
 import React from "react";
-import BreadCrumb from "Common/BreadCrumb";
+import BreadCrumb from "../../../../Common/BreadCrumb";
 import DefaultOutline from "./DefaultOutline";
 import PillsDismissible from "./PillsDismissible";
 import FillBadges from "./FillBadges";

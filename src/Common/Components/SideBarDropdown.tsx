@@ -1,12 +1,12 @@
 import React, {
   createContext,
   useContext,
-  ReactNode,
-  ElementType,
+
   useRef,
   useEffect,
   useCallback,
 } from "react";
+import type { ElementType, ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
 interface DropdownContextType {
   toggleOpen: any;

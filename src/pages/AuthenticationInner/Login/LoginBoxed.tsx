@@ -1,44 +1,113 @@
-import React from "react";
-// Formik validation
+import  { useState } from "react";
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import { useFormik as useFormic } from "formik";
 import { useNavigate } from "react-router-dom";
-// Image
-
+import axiosInstance, { setAccessToken } from "../../../Services/axiosInstance"; // Correct path to your axiosInstance file
 import img1 from "../../../assets/images/auth/img-01.png";
-
+import Swal from "sweetalert2";
 
 const LoginBoxed = () => {
-     const navigate = useNavigate();
+  const navigate = useNavigate();
   document.title = "Sign In | Tailwick - React Admin & Dashboard Template";
 
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+ const validation = useFormik({
+   enableReinitialize: true,
+   initialValues: {
+     email: "",
+     password: "",
+   },
+   validationSchema: Yup.object({
+     email: Yup.string()
+       .email("Invalid email format")
+       .required("Please Enter Your email"),
+     password: Yup.string().required("Please Enter Your Password"),
+   }),
+
+  onSubmit: async (values, { setErrors }) => {
+  setErrorMsg(null);
+
+  const uniqueCodeData = localStorage.getItem("uniqueCodeData");
+  let unique_code: string | null = null;
+
+  if (uniqueCodeData) {
+    try {
+      const parsed = JSON.parse(uniqueCodeData);
+      unique_code = parsed?.unique_code ?? null;
+    } catch {
+      unique_code = null;
+    }
+  }
+
+  if (!unique_code) {
+    setErrorMsg(
+      "Unique code is required. Please verify your unique code before login."
+    );
+    return;
+  }
+
+  try {
+    const response = await axiosInstance.post("login", {
+      email: values.email,
+      password: values.password,
+      unique_code,
+    });
+
+    const { token, user } = response.data;
+
+    if (token) {
+      localStorage.setItem("access_token", token);
+
+      // Save user role as well
+      if (user?.roles) {
+        localStorage.setItem("role", user.roles);
+      }
+
+      // Save user kyc status
+      if (user?.kyc_status) {
+        localStorage.setItem("kyc_status", user.kyc_status);
+      }
+
+      setAccessToken(token);
+     if (user?.kyc_verified === true) {
+       navigate("/dashboard");
+     } else {
+       await Swal.fire({
+         title: "Waiting for admin approval",
+         text: "Your KYC verification is pending approval from admin.",
+         icon: "info",
+         confirmButtonText: "OK",
+       });
+       navigate("/kyc-form");
+     }
+      
+    } else {
+      setErrorMsg("Login failed: token not received.");
+    }
+  } catch (error: any) {
+    if (error.response?.data?.errors) {
+      const backendErrors = error.response.data.errors;
+      const formikErrors: { [key: string]: string } = {};
+      for (const key in backendErrors) {
+        if (Array.isArray(backendErrors[key]) && backendErrors[key].length > 0) {
+          formikErrors[key] = backendErrors[key][0];
+        }
+      }
+      setErrors(formikErrors);
+    } else if (error.response?.data?.message) {
+      setErrorMsg(error.response.data.message);
+    } else {
+      setErrorMsg("Login failed. Please check your credentials and try again.");
+    }
+  }
+},
+
+ });
 
 
-    const validation = useFormik({
-    enableReinitialize: true,
-    initialValues: {
-      email: "", // Replace with your initial email
-      password: "", // Replace with your initial password
-    },
-    validationSchema: Yup.object({
-      email: Yup.string().required("Please Enter Your email"),
-      password: Yup.string().required("Please Enter Your Password"),
-    }),
-    onSubmit: (values) => {
-        console.log("values", values);
-        localStorage.setItem("access_token", "true");
-      // Call your login API or authentication here, then redirect:
-      navigate("/dashboard");
-    },
-  });
-
-
-
-
- 
   return (
-    <React.Fragment>
+    <>
       <div className="flex items-center justify-center min-h-screen px-4 py-16 bg-cover bg-auth-pattern dark:bg-auth-pattern-dark dark:text-zink-100 font-public">
         <div className="mb-0 border-none shadow-none xl:w-2/3 card bg-white/70 dark:bg-zink-500/70">
           <div className="grid grid-cols-1 gap-0 lg:grid-cols-12">
@@ -53,30 +122,25 @@ const LoginBoxed = () => {
                   </p>
                 </div>
 
+                {errorMsg && (
+                  <div
+                    className="px-4 py-3 mb-3 text-sm text-red-500 border border-red-200 rounded-md bg-red-50 dark:bg-red-400/20 dark:border-red-500/50"
+                    role="alert"
+                  >
+                    {errorMsg}
+                  </div>
+                )}
+
                 <form
                   onSubmit={validation.handleSubmit}
                   className="mt-10"
                   id="signInForm"
                 >
-                  {/* {success && (
-                    <div
-                      className="px-4 py-3 mb-3 text-sm text-green-500 border border-green-200 rounded-md bg-green-50 dark:bg-green-400/20 dark:border-green-500/50"
-                      id="successAlert"
-                    >
-                      You have <b>successfully</b> signed in.
-                    </div>
-                  )}
-                  {error && (
-                    <div
-                      className="px-4 py-3 mb-3 text-sm text-red-500 border border-red-200 rounded-md bg-red-50 dark:bg-red-400/20 dark:border-red-500/50"
-                      id="successAlert"
-                    >
-                      You have <b>failed</b> signed in.
-                    </div>
-                  )} */}
+                  {/* Email and Password fields with validation from your original code */}
+
                   <div className="mb-3">
                     <label
-                      htmlFor="username"
+                      htmlFor="email"
                       className="inline-block mb-2 text-base font-medium"
                     >
                       UserName/ Email ID
@@ -91,22 +155,13 @@ const LoginBoxed = () => {
                       className="form-input dark:bg-zink-600/50 border-slate-200 dark:border-zink-500 focus:outline-none focus:border-custom-500 disabled:bg-slate-100 dark:disabled:bg-zink-600 disabled:border-slate-300 dark:disabled:border-zink-500 dark:disabled:text-zink-200 disabled:text-slate-500 dark:text-zink-100 dark:focus:border-custom-800 placeholder:text-slate-400 dark:placeholder:text-zink-200"
                       placeholder="Enter username or email"
                     />
-                    <div
-                      id="username-error"
-                      className="hidden mt-1 text-sm text-red-500"
-                    >
-                      Please enter a valid email address.
-                    </div>
-
-                    {validation.touched.email && validation.errors.email ? (
-                      <div
-                        id="email-error"
-                        className="mt-1 text-sm text-red-500"
-                      >
+                    {validation.touched.email && validation.errors.email && (
+                      <div className="mt-1 text-sm text-red-500">
                         {validation.errors.email}
                       </div>
-                    ) : null}
+                    )}
                   </div>
+
                   <div className="mb-3">
                     <label
                       htmlFor="password"
@@ -125,22 +180,14 @@ const LoginBoxed = () => {
                       placeholder="Enter password"
                     />
                     {validation.touched.password &&
-                    validation.errors.password ? (
-                      <div
-                        id="password-error"
-                        className="mt-1 text-sm text-red-500"
-                      >
-                        {validation.errors.password}
-                      </div>
-                    ) : null}
-                    <div
-                      id="password-error"
-                      className="hidden mt-1 text-sm text-red-500"
-                    >
-                      Password must be at least 8 characters long and contain
-                      both letters and numbers.
-                    </div>
+                      validation.errors.password && (
+                        <div className="mt-1 text-sm text-red-500">
+                          {validation.errors.password}
+                        </div>
+                      )}
                   </div>
+
+                  {/* Optional "Remember me" checkbox */}
                   <div>
                     <div className="flex items-center gap-2">
                       <input
@@ -156,13 +203,8 @@ const LoginBoxed = () => {
                         Remember me
                       </label>
                     </div>
-                    <div
-                      id="remember-error"
-                      className="hidden mt-1 text-sm text-red-500"
-                    >
-                      Please check the "Remember me" before submitting the form.
-                    </div>
                   </div>
+
                   <div className="mt-10">
                     <button
                       type="submit"
@@ -174,14 +216,19 @@ const LoginBoxed = () => {
                 </form>
               </div>
             </div>
+
             <div className="mx-2 mt-2 mb-2 border-none shadow-none lg:col-span-7 card bg-white/60 dark:bg-zink-500/60">
-              <img src={img1} alt="" className="md:max-w-[32rem] mx-auto" />
+              <img
+                src={img1}
+                alt="Login Illustration"
+                className="md:max-w-[32rem] mx-auto"
+              />
             </div>
           </div>
         </div>
       </div>
-    </React.Fragment>
+    </>
   );
 };
 
-export default  LoginBoxed;
+export default LoginBoxed;

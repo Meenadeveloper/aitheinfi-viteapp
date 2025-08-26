@@ -1,5 +1,5 @@
 import React from "react";
-import { pricingData } from "Common/data";
+import { pricingData } from "../../../Common/data";
 import { CheckCheck, X } from "lucide-react";
 
 const Plans = () => {
