@@ -9,7 +9,26 @@ import rootReducer from "./slices";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
-const store = configureStore({ reducer: rootReducer, devTools: true });
+// const store = configureStore({ reducer: rootReducer, devTools: true });
+
+const store = configureStore({
+  reducer: rootReducer,
+  devTools: true,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: ["persist/PERSIST", "persist/REHYDRATE"],
+        // ignoredActionsPaths: ["payload"],
+        // ignoredPaths: ["kycForm.formValues"],
+      },
+    }),
+});
+
+
+// Export types for use in components
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+
 root.render(
   <React.StrictMode>
     <Provider store={store}>

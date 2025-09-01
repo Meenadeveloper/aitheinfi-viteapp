@@ -40,6 +40,7 @@ import InvoiceReducer from "./invoice/reducer"
 import UsersReducer from "./users/reducer";
 
 // KYC
+import KycReducer from "./auth/kyc/kycSlice";
 const rootReducer = combineReducers({
   Layout: LayoutReducer,
   Login: LoginReducer,
@@ -54,6 +55,7 @@ const rootReducer = combineReducers({
   Social: SocialReducer,
   Invoice: InvoiceReducer,
   Users: UsersReducer,
+  kycForm: KycReducer,
 });
 
 
