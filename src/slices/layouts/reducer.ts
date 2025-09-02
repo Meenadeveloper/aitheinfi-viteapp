@@ -10,7 +10,7 @@ import {
   LEFT_SIDEBAR_SIZE_TYPES,
   LEFT_NAVIGATION_TYPES,
   LEFT_SIDEBAR_COLOR_TYPES,
-  LAYOUT_TOPBAR_THEME_TYPES
+  LAYOUT_TOPBAR_THEME_TYPES,
 } from "../../Common/constants/layout";
 
 export interface LayoutState {
@@ -52,17 +52,19 @@ export const initialState: LayoutState = {
   layoutType: LAYOUT_TYPES.VERTICAL,
   layoutSemiDarkType: LAYOUT_SEMI_DARK.LIGHT,
   layoutSkintype: LAYOUT_SKIN.DEFAULT,
-  layoutModeType: LAYOUT_MODE_TYPES.LIGHTMODE,
+  // layoutModeType: LAYOUT_MODE_TYPES.LIGHTMODE,
+  layoutModeType: LAYOUT_MODE_TYPES.DARKMODE,
+
   layoutDirectionType: LAYOUT_DIRECTION.LTR,
   layoutContentWidthType: LAYOUT_CONTENT_WIDTH.FLUID,
   layoutSidebarSizeType: LEFT_SIDEBAR_SIZE_TYPES.DEFAULT,
   layoutNavigationType: LEFT_NAVIGATION_TYPES.STICKY,
-  layoutSidebarColorType: LEFT_SIDEBAR_COLOR_TYPES.LIGHT,
-  layoutTopbarColorType: LAYOUT_TOPBAR_THEME_TYPES.LIGHT,
+  layoutSidebarColorType: LEFT_SIDEBAR_COLOR_TYPES.DARK,
+  layoutTopbarColorType: LAYOUT_TOPBAR_THEME_TYPES.DARK,
 };
 
 const LayoutSlice = createSlice({
-  name: 'LayoutSlice',
+  name: "LayoutSlice",
   initialState,
   reducers: {
     changeLayoutAction(state: any, action: any) {
@@ -94,8 +96,8 @@ const LayoutSlice = createSlice({
     },
     changeLayoutTopbarColorAction(state: any, action: any) {
       state.layoutTopbarColorType = action.payload;
-    }
-  }
+    },
+  },
 });
 
 export const {
@@ -108,7 +110,7 @@ export const {
   changeLayoutSidebarSizeAction,
   changeNavigationAction,
   changeLeftSidebarColorTypeAction,
-  changeLayoutTopbarColorAction
+  changeLayoutTopbarColorAction,
 } = LayoutSlice.actions;
 
 export default LayoutSlice.reducer;
