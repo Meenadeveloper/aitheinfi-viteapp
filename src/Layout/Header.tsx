@@ -16,11 +16,12 @@ import LightDark from '../Common/LightDark';
 import NotificationDropdown from '../Common/NotificationDropdown';
 import { Dropdown } from '../Common/Components/Dropdown';
 import { changeLeftsidebarSizeType } from '../slices/thunk';
-
+import { useNavigate } from "react-router-dom";
+import axiosInstance from '../Services/axiosInstance';
 // const Header = ({ handleToggleDrawer, handleDrawer }: any) => {
 
 const Header = () => {
-
+const navigate = useNavigate();
     const dispatch = useDispatch<any>();
 
     // react-redux
@@ -124,7 +125,26 @@ const Header = () => {
         })
     );
 
-    const { user } = useSelector(selectProperties);
+  const { user } = useSelector(selectProperties);
+  
+  const handleLogout = async () => {
+    try {
+      // Adjust URL as needed for your API
+      await axiosInstance.post("logout");
+
+      // Remove tokens, clear localStorage if used
+      localStorage.removeItem("access_token"); // Or your key
+      // Optionally: clear cookies, context, etc.
+      localStorage.removeItem("role");
+      localStorage.removeItem("uniqueCodeData");
+      window.location.reload(); // This reloads the entire page
+      // Redirect to login page or home
+      navigate("/");
+    } catch (error) {
+      // You can show an error toast or message if needed
+      console.error("Logout failed:", error);
+    }
+  };
 
     return (
       <React.Fragment>
@@ -292,7 +312,7 @@ const Header = () => {
                             </span>
                           </a>
                         </li>
-                        <li className="pt-2 mt-2 border-t border-slate-200 dark:border-zink-500">
+                        {/* <li className="pt-2 mt-2 border-t border-slate-200 dark:border-zink-500">
                           <a
                             className="block ltr:pr-4 rtl:pl-4 py-1.5 text-base font-medium transition-all duration-200 ease-linear text-slate-600 dropdown-item hover:text-custom-500 focus:text-custom-500 dark:text-zink-200 dark:hover:text-custom-500 dark:focus:text-custom-500"
                             href={import.meta.env.PUBLIC_URL + "/logout"}
@@ -300,6 +320,17 @@ const Header = () => {
                             <LogOut className="inline-block size-4 ltr:mr-2 rtl:ml-2"></LogOut>{" "}
                             Sign Out
                           </a>
+                        </li> */}
+
+                        <li className="pt-2 mt-2 border-t border-slate-200 dark:border-zink-500">
+                          <button
+                            type="button"
+                            onClick={handleLogout}
+                            className="block w-full text-left ltr:pr-4 rtl:pl-4 py-1.5 text-base font-medium transition-all duration-200 ease-linear text-slate-600 dropdown-item hover:text-custom-500 focus:text-custom-500 dark:text-zink-200 dark:hover:text-custom-500 dark:focus:text-custom-500"
+                          >
+                            <LogOut className="inline-block size-4 ltr:mr-2 rtl:ml-2" />
+                            Sign Out
+                          </button>
                         </li>
                       </ul>
                     </Dropdown.Content>
