@@ -41,13 +41,11 @@ const KycForm: React.FC = () => {
     loading,
     success,
     globalError,
-    touched,
     focusedField,
   } = useAppSelector(selectKycFormState);
   const navigate = useNavigate();
 
   // Ref for autofocus
-  const firstInputRef = useRef<HTMLInputElement>(null);
   // Local validation errors
   const [validationErrors, setValidationErrors] = useState<
     Record<string, string>
@@ -57,14 +55,20 @@ const KycForm: React.FC = () => {
 
   // Refs for inputs to manage autofocus
   const refs = {
-    government_id_type: useRef<HTMLInputElement>(null),
+    government_id_type: useRef<any>(null),
     government_id_number: useRef<HTMLInputElement>(null),
     tax_id: useRef<HTMLInputElement>(null),
     address_line: useRef<HTMLInputElement>(null),
-    state_id: useRef<HTMLInputElement>(null),
-    district_id: useRef<HTMLInputElement>(null),
-    city_id: useRef<HTMLInputElement>(null),
+    state_id: useRef<any>(null),
+    district_id: useRef<any>(null),
+    city_id: useRef<any>(null),
     postal_code: useRef<HTMLInputElement>(null),
+    government_id_file: useRef<any>(null),
+    proof_of_address_file: useRef<any>(null),
+    live_selfie_file: useRef<any>(null),
+    partnership_agreement_file: useRef<any>(null),
+    contracts_file: useRef<any>(null),
+    nda_file: useRef<any>(null),
   };
 
   // Controlled file inputs state
@@ -87,6 +91,117 @@ const KycForm: React.FC = () => {
 
   const selectedStateId = formValues.state_id;
   const selectedDistrictId = formValues.district_id;
+
+  // Handle autofocus based on focusedField from Redux
+  // useEffect(() => {
+  //   if (focusedField && refs[focusedField as keyof typeof refs]?.current) {
+  //     const fieldRef = refs[focusedField as keyof typeof refs];
+
+  //     setTimeout(() => {
+  //       if (fieldRef.current) {
+  //         // For react-select components
+  //         if (
+  //           fieldRef.current.focus &&
+  //           typeof fieldRef.current.focus === "function"
+  //         ) {
+  //           fieldRef.current.focus();
+  //         }
+  //         // For file upload components with imperative handle
+  //         else if (
+  //           fieldRef.current.focus &&
+  //           typeof fieldRef.current.focus === "function"
+  //         ) {
+  //           fieldRef.current.focus();
+  //         }
+  //         // For regular input elements
+  //         else if (
+  //           fieldRef.current.tagName === "INPUT" ||
+  //           fieldRef.current.tagName === "TEXTAREA"
+  //         ) {
+  //           fieldRef.current.focus();
+  //         }
+  //         // Try to find input inside container
+  //         else {
+  //           const input = fieldRef.current.querySelector(
+  //             'input, textarea, [role="combobox"]'
+  //           );
+  //           if (input && typeof input.focus === "function") {
+  //             input.focus();
+  //           }
+  //         }
+  //       }
+  //     }, 150);
+  //   }
+  // }, [focusedField]);
+
+  // Handle autofocus based on focusedField from Redux
+  useEffect(() => {
+    if (!focusedField) return;
+
+    const fieldRef = refs[focusedField as keyof typeof refs];
+    if (!fieldRef?.current) return;
+
+    const focusElement = () => {
+      try {
+        // For react-select components
+        if (
+          fieldRef.current?.focus &&
+          typeof fieldRef.current.focus === "function"
+        ) {
+          fieldRef.current.focus();
+          return true;
+        }
+
+        // For file upload components with imperative handle
+        if (
+          fieldRef.current?.focus &&
+          typeof fieldRef.current.focus === "function"
+        ) {
+          fieldRef.current.focus();
+          return true;
+        }
+
+        // For regular input/textarea elements
+        if (
+          fieldRef.current?.tagName === "INPUT" ||
+          fieldRef.current?.tagName === "TEXTAREA"
+        ) {
+          fieldRef.current.focus();
+          return true;
+        }
+
+        // Try to find focusable elements inside container
+        const focusableElement = fieldRef.current.querySelector(
+          'input, textarea, [role="combobox"], [tabindex="0"]'
+        );
+        if (focusableElement && typeof focusableElement.focus === "function") {
+          focusableElement.focus();
+          return true;
+        }
+
+        return false;
+      } catch (error) {
+        console.warn("Focus error:", error);
+        return false;
+      }
+    };
+
+    // Try multiple times with increasing delays for better reliability
+    const attemptFocus = () => {
+      if (!focusElement()) {
+        setTimeout(() => {
+          if (!focusElement()) {
+            setTimeout(() => {
+              focusElement();
+            }, 300);
+          }
+        }, 150);
+      }
+    };
+
+    // Initial attempt
+    setTimeout(attemptFocus, 50);
+  }, [focusedField]);
 
   useEffect(() => {
     async function fetchStates() {
@@ -156,10 +271,7 @@ const KycForm: React.FC = () => {
 
   useEffect(() => {
     document.body.classList.add("font-public");
-    // Autofocus on first input
-    if (firstInputRef.current) {
-      firstInputRef.current.focus();
-    }
+
     return () => {
       document.body.classList.remove("font-public");
     };
@@ -176,35 +288,6 @@ const KycForm: React.FC = () => {
   // Combine redux backend errors and local Yup errors for display
   const getCombinedError = (field: string) =>
     validationErrors[field] || fieldErrors[field];
-
-  // Clear errors and update store on input change
-  // const handleInputChange = async (
-  //   field: keyof typeof formValues,
-  //   value: string
-  // ) => {
-  //   if (fieldErrors[field]) dispatch(clearFieldError(field));
-  //   if (validationErrors[field]) {
-  //     setValidationErrors((prev) => {
-  //       const copy = { ...prev };
-  //       delete copy[field];
-  //       return copy;
-  //     });
-  //   }
-  //   dispatch(updateFormValue({ field, value }));
-  //   dispatch(clearFieldError(field));
-  //   dispatch(setFieldTouched({ field, touched: true }));
-  //   // Validate single field immediately on change
-  //   try {
-  //     await kycValidationSchema.validateAt(field, {
-  //       ...formValues,
-  //       [field]: value,
-  //     });
-  //   } catch (e) {
-  //     if (e instanceof Error) {
-  //       setValidationErrors((prev) => ({ ...prev, [field]: e.message }));
-  //     }
-  //   }
-  // };
 
   // Handle text/select input changes
   const handleInputChange = async (
@@ -235,34 +318,6 @@ const KycForm: React.FC = () => {
   const handleBlur = (field: keyof typeof formValues) => {
     dispatch(setFieldTouched({ field, touched: true }));
   };
-
-  // Handle file changes
-  // const handleFileChange = async (
-  //   files: FileWithPreview[],
-  //   field: keyof typeof formValues
-  // ) => {
-  //   if (fieldErrors[field]) dispatch(clearFieldError(field));
-  //   if (validationErrors[field]) {
-  //     setValidationErrors((prev) => {
-  //       const copy = { ...prev };
-  //       delete copy[field];
-  //       return copy;
-  //     });
-  //   }
-  //   const file = files.length > 0 ? files[0] : null;
-  //   dispatch(updateFormValue({ field, value: file }));
-
-  //   try {
-  //     await kycValidationSchema.validateAt(field, {
-  //       ...formValues,
-  //       [field]: file,
-  //     });
-  //   } catch (e) {
-  //     if (e instanceof Error) {
-  //       setValidationErrors((prev) => ({ ...prev, [field]: e.message }));
-  //     }
-  //   }
-  // };
 
   // Handle file changes (local states + Redux update)
   const handleFileChange = async (
@@ -314,68 +369,7 @@ const KycForm: React.FC = () => {
     }
   };
 
-  // Form submission
-  // const handleSubmit = async (e: React.FormEvent) => {
-  //   e.preventDefault();
-  //   setValidationErrors({});
-  //   dispatch(clearGlobalError());
-
-  //   try {
-  //     await kycValidationSchema.validate(formValues, { abortEarly: false });
-
-  //     const formData = new FormData();
-  //     Object.entries(formValues).forEach(([key, value]) => {
-  //       if (value instanceof File) {
-  //         formData.append(key, value);
-  //       } else if (value) {
-  //         formData.append(key, value as string);
-  //       }
-  //     });
-
-  //     // dispatch returns an action with payload as the API response
-  //     const resultAction = await dispatch(updateKyc(formData)).unwrap();
-  //     console.log("kyc response ", resultAction);
-  //     console.log("KYC status:", resultAction.status);
-  //     console.log("KYC message:", resultAction.message);
-  //     // Check response status
-  //     if (resultAction.status === false || resultAction.status === 200) {
-  //       // For example, show alert and prevent immediate navigation
-  //       await Swal.fire({
-  //         title: "Waiting for admin approval",
-  //         text: resultAction.message || "Your KYC is pending admin approval.",
-  //         icon: "info",
-  //         confirmButtonText: "OK",
-  //       });
-  //       // Optionally, you may choose to remain on page or reset form
-  //       dispatch(resetKycForm());
-  //       // Reset local file states to clear previews
-  //       setGovtIdFiles([]);
-  //       setAddressProofFiles([]);
-  //       setProfilePhotoFiles([]);
-  //       setPartnershipFiles([]);
-  //       setContractsFiles([]);
-  //       setNdaFiles([]);
-  //     } else {
-  //       // Success path: reset form, navigate
-  //       dispatch(resetKycForm());
-  //       navigate("/dashboard");
-  //     }
-  //   } catch (error) {
-  //     if (error instanceof Yup.ValidationError) {
-  //       const errs: Record<string, string> = {};
-  //       error.inner.forEach((validationError) => {
-  //         if (validationError.path)
-  //           errs[validationError.path] = validationError.message;
-  //       });
-  //       setValidationErrors(errs);
-  //     } else {
-  //       console.error("Submission error", error);
-  //       // dispatch(resetKycForm());
-  //     }
-  //   }
-  // };
-
-  // Form submit handler
+  // Form submit handler with autofocus on first error field
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setValidationErrors({});
@@ -424,16 +418,51 @@ const KycForm: React.FC = () => {
       }
     } catch (e) {
       if (e instanceof Yup.ValidationError) {
-        const errs: Record<string, string> = {};
+        const newErrors: Record<string, string> = {};
+        const newTouched: Record<string, boolean> = {};
+
         e.inner.forEach((err) => {
-          if (err.path) errs[err.path] = err.message;
+          if (err.path) {
+            newErrors[err.path] = err.message;
+            newTouched[err.path] = true;
+          }
         });
-        setValidationErrors(errs);
+
+        setValidationErrors(newErrors);
+
+        // Set touched fields
+        Object.keys(newTouched).forEach((field) => {
+          dispatch(
+            setFieldTouched({
+              field: field as keyof typeof formValues,
+              touched: true,
+            })
+          );
+        });
+
+        // Autofocus first error field
+        const firstErrorField = Object.keys(newErrors)[0];
+        if (firstErrorField) {
+          dispatch(setFocusedField(""));
+          setTimeout(() => {
+            dispatch(setFocusedField(firstErrorField));
+          }, 10);
+        }
       } else {
         console.error("Submission error", e);
       }
     }
   };
+
+  // Add this to your KYC form component for debugging
+  useEffect(() => {
+    console.log("Focused field changed:", focusedField);
+    console.log("Available refs:", Object.keys(refs));
+    console.log(
+      "Ref exists:",
+      !!refs[focusedField as keyof typeof refs]?.current
+    );
+  }, [focusedField]);
 
   return (
     <>
@@ -478,10 +507,12 @@ const KycForm: React.FC = () => {
                     onChange={(val: string) =>
                       handleInputChange("government_id_type", val)
                     }
-                    className="border-slate-200 dark:border-zink-500 focus:outline-none focus:border-custom-500 placeholder:text-slate-400 dark:placeholder:text-zink-200"
+                    onBlur={() => handleBlur("government_id_type")}
+                    className=" border-slate-200 dark:border-zink-500 focus:outline-none focus:border-custom-500 placeholder:text-slate-400 dark:placeholder:text-zink-200"
                     placeholder="Select ID Proof"
                     error={getCombinedError("government_id_type")}
-                    inputRef={refs.government_id_type}
+                    ref={refs.government_id_type}
+                    autoFocus={focusedField === "government_id_type"}
                   />
                 </div>
 
@@ -497,10 +528,11 @@ const KycForm: React.FC = () => {
                       handleInputChange("government_id_number", e.target.value)
                     }
                     placeholder="Government ID Number"
-                    className="form-input border-slate-200 dark:border-zink-500"
+                    className="form-input  dark:border-zink-500"
                     error={getCombinedError("government_id_number")}
-                    autoFocus={true}
-                    inputRef={refs.government_id_number}
+                    onBlur={() => handleBlur("government_id_number")}
+                    ref={refs.government_id_number}
+                    autoFocus={focusedField === "government_id_number"}
                   />
                 </div>
 
@@ -516,9 +548,11 @@ const KycForm: React.FC = () => {
                       handleInputChange("tax_id", e.target.value)
                     }
                     placeholder="Tax ID"
-                    className="form-input border-slate-200 dark:border-zink-500"
+                    className="form-input  dark:border-zink-500"
+                    onBlur={() => handleBlur("tax_id")}
                     error={getCombinedError("tax_id")}
-                    inputRef={refs.tax_id}
+                    ref={refs.tax_id}
+                    autoFocus={focusedField === "tax_id"}
                   />
                 </div>
 
@@ -534,9 +568,11 @@ const KycForm: React.FC = () => {
                       handleInputChange("address_line", e.target.value)
                     }
                     placeholder="Address Line"
-                    className="form-input border-slate-200 dark:border-zink-500"
+                    className="form-input dark:border-zink-500"
                     error={getCombinedError("address_line")}
-                    inputRef={refs.address_line}
+                    ref={refs.address_line}
+                    onBlur={() => handleBlur("address_line")}
+                    autoFocus={focusedField === "address_line"}
                   />
                 </div>
 
@@ -554,6 +590,9 @@ const KycForm: React.FC = () => {
                     className="border-slate-200 dark:border-zink-500 focus:outline-none focus:border-custom-500 placeholder:text-slate-400 dark:placeholder:text-zink-200"
                     placeholder="Select State"
                     error={getCombinedError("state_id")}
+                    onBlur={() => handleBlur("state_id")}
+                    ref={refs.state_id}
+                    autoFocus={focusedField === "state_id"}
                   />
                 </div>
 
@@ -569,10 +608,13 @@ const KycForm: React.FC = () => {
                     onChange={(val: string) =>
                       handleInputChange("district_id", val)
                     }
+                    onBlur={() => handleBlur("district_id")}
                     className="border-slate-200 dark:border-zink-500 focus:outline-none focus:border-custom-500 placeholder:text-slate-400 dark:placeholder:text-zink-200"
                     placeholder="Select District"
                     error={getCombinedError("district_id")}
                     disabled={!formValues.state_id} // disable if no state selected
+                    ref={refs.district_id}
+                    autoFocus={focusedField === "district_id"}
                   />
                 </div>
 
@@ -592,6 +634,9 @@ const KycForm: React.FC = () => {
                     placeholder="Select City"
                     error={getCombinedError("city_id")}
                     disabled={!formValues.district_id} // disable if no district selected
+                    onBlur={() => handleBlur("city_id")}
+                    ref={refs.city_id}
+                    autoFocus={focusedField === "city_id"}
                   />
                 </div>
 
@@ -607,8 +652,11 @@ const KycForm: React.FC = () => {
                       handleInputChange("postal_code", e.target.value)
                     }
                     placeholder="Postal Code"
-                    className="form-input border-slate-200 dark:border-zink-500"
+                    className="form-input  dark:border-zink-500"
                     error={getCombinedError("postal_code")}
+                    onBlur={() => handleBlur("postal_code")}
+                    ref={refs.postal_code}
+                    autoFocus={focusedField === "postal_code"}
                   />
                 </div>
 
@@ -623,6 +671,7 @@ const KycForm: React.FC = () => {
                     multiple={false}
                     className="dark:bg-zink-700"
                     error={getCombinedError("government_id_file")}
+                    autoFocus={focusedField === "government_id_file"}
                   />
                 </div>
 
@@ -637,6 +686,7 @@ const KycForm: React.FC = () => {
                     multiple={false}
                     className="dark:bg-zink-700"
                     error={getCombinedError("proof_of_address_file")}
+                    autoFocus={focusedField === "proof_of_address_file"}
                   />
                 </div>
 
@@ -651,6 +701,7 @@ const KycForm: React.FC = () => {
                     multiple={false}
                     className="dark:bg-zink-700"
                     error={getCombinedError("live_selfie_file")}
+                    autoFocus={focusedField === "live_selfie_file"}
                   />
                 </div>
 
@@ -665,6 +716,7 @@ const KycForm: React.FC = () => {
                     multiple={false}
                     className="dark:bg-zink-700"
                     error={getCombinedError("partnership_agreement_file")}
+                    autoFocus={focusedField === "partnership_agreement_file"}
                   />
                 </div>
 
@@ -679,6 +731,7 @@ const KycForm: React.FC = () => {
                     multiple={false}
                     className="dark:bg-zink-700"
                     error={getCombinedError("contracts_file")}
+                    autoFocus={focusedField === "contracts_file"}
                   />
                 </div>
 
@@ -693,6 +746,7 @@ const KycForm: React.FC = () => {
                     multiple={false}
                     className="dark:bg-zink-700"
                     error={getCombinedError("nda_file")}
+                    autoFocus={focusedField === "nda_file"}
                   />
                 </div>
               </div>
