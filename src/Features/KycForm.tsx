@@ -619,7 +619,7 @@ const KycForm: React.FC = () => {
 
                 <div className="mb-3">
                   <label className="inline-block mb-2 text-base font-medium">
-                    State ID
+                    State 
                   </label>
                   <DynamicInput
                     type="select"
@@ -639,7 +639,7 @@ const KycForm: React.FC = () => {
 
                 <div className="mb-3">
                   <label className="inline-block mb-2 text-base font-medium">
-                    District ID
+                    District 
                   </label>
                   {/* District select */}
                   <DynamicInput
@@ -661,7 +661,7 @@ const KycForm: React.FC = () => {
 
                 <div className="mb-3">
                   <label className="inline-block mb-2 text-base font-medium">
-                    City ID
+                    City 
                   </label>
                   {/* City select */}
                   <DynamicInput

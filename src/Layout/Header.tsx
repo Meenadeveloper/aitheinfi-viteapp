@@ -1,5 +1,9 @@
 import React, { useEffect } from 'react';
-import { ChevronsLeft, ChevronsRight, Gem, LogOut, Mail, MessagesSquare, Search, User2 } from 'lucide-react';
+import {
+  ChevronsLeft, ChevronsRight,
+  // Gem,
+  LogOut, Mail, MessagesSquare, Search, User2
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -247,7 +251,7 @@ const navigate = useNavigate();
                       aria-labelledby="dropdownMenuButton"
                     >
                       <h6 className="mb-2 text-sm font-normal text-slate-500 dark:text-zink-300">
-                        Welcome to Tailwick
+                        Welcome to aetheinfi
                       </h6>
                       <a href="#!" className="flex gap-3 mb-3">
                         <div className="relative inline-block shrink-0">
@@ -265,7 +269,7 @@ const navigate = useNavigate();
                             {user.username || "admin"}
                           </h6>
                           <p className="text-slate-500 dark:text-zink-300">
-                            CEO & Founder
+                           User
                           </p>
                         </div>
                       </a>
@@ -273,7 +277,7 @@ const navigate = useNavigate();
                         <li>
                           <a
                             className="block ltr:pr-4 rtl:pl-4 py-1.5 text-base font-medium transition-all duration-200 ease-linear text-slate-600 dropdown-item hover:text-custom-500 focus:text-custom-500 dark:text-zink-200 dark:hover:text-custom-500 dark:focus:text-custom-500"
-                            href={import.meta.env.PUBLIC_URL + "/user-profile"}
+                            href="#"
                           >
                             <User2 className="inline-block size-4 ltr:mr-2 rtl:ml-2"></User2>{" "}
                             Profile
@@ -294,13 +298,13 @@ const navigate = useNavigate();
                         <li>
                           <a
                             className="block ltr:pr-4 rtl:pl-4 py-1.5 text-base font-medium transition-all duration-200 ease-linear text-slate-600 dropdown-item hover:text-custom-500 focus:text-custom-500 dark:text-zink-200 dark:hover:text-custom-500 dark:focus:text-custom-500"
-                            href={import.meta.env.PUBLIC_URL + "/apps-chat"}
+                            href="#"
                           >
                             <MessagesSquare className="inline-block size-4 ltr:mr-2 rtl:ml-2"></MessagesSquare>{" "}
                             Chat
                           </a>
                         </li>
-                        <li>
+                        {/* <li>
                           <a
                             className="block ltr:pr-4 rtl:pl-4 py-1.5 text-base font-medium transition-all duration-200 ease-linear text-slate-600 dropdown-item hover:text-custom-500 focus:text-custom-500 dark:text-zink-200 dark:hover:text-custom-500 dark:focus:text-custom-500"
                             href={import.meta.env.PUBLIC_URL + "/pages-pricing"}
@@ -311,7 +315,7 @@ const navigate = useNavigate();
                               Pro
                             </span>
                           </a>
-                        </li>
+                        </li> */}
                         {/* <li className="pt-2 mt-2 border-t border-slate-200 dark:border-zink-500">
                           <a
                             className="block ltr:pr-4 rtl:pl-4 py-1.5 text-base font-medium transition-all duration-200 ease-linear text-slate-600 dropdown-item hover:text-custom-500 focus:text-custom-500 dark:text-zink-200 dark:hover:text-custom-500 dark:focus:text-custom-500"

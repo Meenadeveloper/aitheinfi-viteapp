@@ -16,7 +16,7 @@ const menuData: any = [
     {
         id: "dashboard",
         label: 'Dashboards',
-        link: "/#",
+        link: "/dashboard",
         icon: <MonitorDot />,
         // subItems: [
         //     {
@@ -79,7 +79,7 @@ const menuData: any = [
         id: 'chat',
         label: 'Chat',
         icon: <MessageSquare />,
-        link: '/apps-chat',
+        link: '#',
         parentId: 2
     },
     // {

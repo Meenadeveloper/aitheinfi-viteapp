@@ -1,28 +1,30 @@
-import React from 'react';
 import { Dropdown } from './Components/Dropdown';
-import { BellRing, Clock, MoveRight, ShoppingBag } from 'lucide-react';
-import SimpleBar from 'simplebar-react';
-import { Link } from 'react-router-dom';
+import {
+    BellRing,
+    // Clock, MoveRight, ShoppingBag
+} from 'lucide-react';
+// import SimpleBar from 'simplebar-react';
+// import { Link } from 'react-router-dom';
 
 // Image
-import avatar3 from "../assets/images/users/avatar-3.png";
-import avatar5 from "../assets/images/users/avatar-5.png";
-import avatar7 from "../assets/images/users/avatar-7.png";
+// import avatar3 from "../assets/images/users/avatar-3.png";
+// import avatar5 from "../assets/images/users/avatar-5.png";
+// import avatar7 from "../assets/images/users/avatar-7.png";
 
-interface Notification {
-    id: number; type: string; imageClassName?: string; image?: string; boldName?: string; name?: string; description?: string; price?: string; time: string; date: string
-}
+// interface Notification {
+//     id: number; type: string; imageClassName?: string; image?: string; boldName?: string; name?: string; description?: string; price?: string; time: string; date: string
+// }
 
-const notification: Notification[] = [
-    { id: 1, type: "follower", imageClassName: "size-10 rounded-md shrink-0 bg-slate-100", image: avatar3, boldName: "@willie_passem", name: "followed you", time: "4 sec", date: "Wednesday 03:42 PM" },
-    { id: 2, type: "mention", imageClassName: "size-10 bg-yellow-100 rounded-md shrink-0", image: avatar5, boldName: "@caroline_jessica", name: "commented on your post", time: "15 min", description: "Amazing! Fast, to the point, professional and really amazing to work with them!!!", date: "Wednesday 03:42 PM", },
-    { id: 3, type: "invite", imageClassName: "size-10 rounded-md shrink-0 bg-slate-100", name: "Successfully purchased a business plan for", price: "$199.99", time: "Yesterday", date: "Monday 11:26 AM" },
-    { id: 4, type: "mention", boldName: "@scott", name: "liked your post", time: "1 Week", date: "Thursday 06:59 AM" },
-]
+// const notification: Notification[] = [
+//     { id: 1, type: "follower", imageClassName: "size-10 rounded-md shrink-0 bg-slate-100", image: avatar3, boldName: "@willie_passem", name: "followed you", time: "4 sec", date: "Wednesday 03:42 PM" },
+//     { id: 2, type: "mention", imageClassName: "size-10 bg-yellow-100 rounded-md shrink-0", image: avatar5, boldName: "@caroline_jessica", name: "commented on your post", time: "15 min", description: "Amazing! Fast, to the point, professional and really amazing to work with them!!!", date: "Wednesday 03:42 PM", },
+//     { id: 3, type: "invite", imageClassName: "size-10 rounded-md shrink-0 bg-slate-100", name: "Successfully purchased a business plan for", price: "$199.99", time: "Yesterday", date: "Monday 11:26 AM" },
+//     { id: 4, type: "mention", boldName: "@scott", name: "liked your post", time: "1 Week", date: "Thursday 06:59 AM" },
+// ]
 
 const NotificationDropdown = () => {
 
-    const [filter, setFilter] = React.useState<string>("all");
+    // const [filter, setFilter] = React.useState<string>("all");
     return (
         <>
             <Dropdown className="relative flex items-center h-header">
@@ -33,7 +35,7 @@ const NotificationDropdown = () => {
                         <span className="relative inline-flex w-1.5 h-1.5 rounded-full bg-sky-500"></span>
                     </span>
                 </Dropdown.Trigger>
-                <Dropdown.Content placement="right-end" className="md:left-[-600px] md:!top-[70px] absolute z-50 ltr:text-left rtl:text-right bg-white rounded-md shadow-md !top-4 dropdown-menu min-w-[20rem] lg:min-w-[26rem] dark:bg-zink-600" aria-labelledby="notificationDropdown">
+                {/* <Dropdown.Content placement="right-end" className="md:left-[-600px] md:!top-[70px] absolute z-50 ltr:text-left rtl:text-right bg-white rounded-md shadow-md !top-4 dropdown-menu min-w-[20rem] lg:min-w-[26rem] dark:bg-zink-600" aria-labelledby="notificationDropdown">
                     <div className="p-4">
                         <h6 className="mb-4 text-16">Notifications <span className="inline-flex items-center justify-center size-5 ml-1 text-[11px] font-medium border rounded-full text-white bg-orange-500 border-orange-500">15</span></h6>
                         <ul className="flex flex-wrap w-full p-1 mb-2 text-sm font-medium text-center rounded-md filter-btns text-slate-500 bg-slate-100 nav-tabs dark:bg-zink-500 dark:text-zink-200">
@@ -98,7 +100,7 @@ const NotificationDropdown = () => {
                             </button>
                         </div>
                     </div>
-                </Dropdown.Content >
+                </Dropdown.Content > */}
             </Dropdown >
         </>
     );
