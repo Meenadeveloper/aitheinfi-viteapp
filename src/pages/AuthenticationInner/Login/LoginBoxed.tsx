@@ -4,7 +4,7 @@ import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
 import axiosInstance, { setAccessToken } from "../../../Services/axiosInstance"; // Correct path to your axiosInstance file
 import img1 from "../../../assets/images/auth/img-01.png";
-import Swal from "sweetalert2";
+// import Swal from "sweetalert2";
 
 const LoginBoxed = () => {
   const navigate = useNavigate();
@@ -65,8 +65,8 @@ const LoginBoxed = () => {
       }
 
       // Save user kyc status
-      if (user?.kyc_status) {
-        localStorage.setItem("kyc_status", user.kyc_status);
+      if (user?.kyc_verified) {
+        localStorage.setItem("kyc_status", user.kyc_verified);
       }
 
       setAccessToken(token);

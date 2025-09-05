@@ -369,6 +369,46 @@ const KycForm: React.FC = () => {
     }
   };
 
+ const [kycAdminVerified, setKycAdminVerified] = useState(null);
+ const [kycUploaded, setKycUploaded] = useState(null);
+
+  useEffect(() => {
+    const fetchKycStatus = async () => {
+      try {
+        const response = await axiosInstance.get("getuser");
+        const isVerified = response.data?.user?.kyc_verified;
+        const isKycUploaded = response.data?.kyc_uploaded;
+    
+      setKycUploaded(isKycUploaded);
+      setKycAdminVerified(isVerified);
+
+      console.log("kyccccc uploaded", isKycUploaded);
+      console.log("kyccccc sta", isVerified);
+
+        if (isVerified) {
+          navigate("/dashboard");
+        } else {
+          if (isKycUploaded === true) {
+            await Swal.fire({
+              title: "KYC Not Verified",
+              text: "Your KYC is pending admin approval.",
+              icon: "info",
+              confirmButtonText: "OK",
+            });
+            console.log("kyc uploaded status", kycUploaded);
+          }
+           
+          console.log("kyc not verified")
+        }
+      } catch (error) {
+        console.error("Failed to fetch KYC status", error);
+        // Optionally handle error here
+      }
+    };
+
+     fetchKycStatus();
+  }, [navigate]);
+
   // Form submit handler with autofocus on first error field
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -396,8 +436,9 @@ const KycForm: React.FC = () => {
       ndaFiles.forEach((f) => formData.append("nda_file", f));
 
       const resultAction = await dispatch(updateKyc(formData)).unwrap();
+      console.log("response data", resultAction);
 
-      if (resultAction.status === false) {
+      if (kycAdminVerified === false) {
         await Swal.fire({
           title: "Waiting for admin approval",
           text: resultAction.message || "Your KYC is pending admin approval.",
