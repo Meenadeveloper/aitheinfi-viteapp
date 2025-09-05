@@ -73,12 +73,12 @@ const LoginBoxed = () => {
      if (user?.kyc_verified === true) {
        navigate("/dashboard");
      } else {
-       await Swal.fire({
-         title: "Waiting for admin approval",
-         text: "Your KYC verification is pending approval from admin.",
-         icon: "info",
-         confirmButtonText: "OK",
-       });
+      //  await Swal.fire({
+      //    title: "Waiting for admin approval",
+      //    text: "Your KYC verification is pending approval from admin.",
+      //    icon: "info",
+      //    confirmButtonText: "OK",
+      //  });
        navigate("/kyc-form");
      }
       
