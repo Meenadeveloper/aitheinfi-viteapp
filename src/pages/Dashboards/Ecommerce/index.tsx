@@ -21,6 +21,7 @@ const Ecommerce = () => {
         <React.Fragment>
             <BreadCrumb title='Home' pageTitle='Dashboards' />
             <div className="grid grid-cols-12 gap-x-5">
+
                 <WelcomeWidget />
                 <OrderStatistics />
                 <Widgets />

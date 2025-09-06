@@ -8,7 +8,8 @@ import img1 from "../../../assets/images/auth/img-01.png";
 
 const LoginBoxed = () => {
   const navigate = useNavigate();
-  document.title = "Sign In | Tailwick - React Admin & Dashboard Template";
+  // document.title = "Sign In | Tailwick - React Admin & Dashboard Template";
+    document.title = "aetheinfi";
 
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
@@ -117,9 +118,9 @@ const LoginBoxed = () => {
                   <h4 className="mb-2 text-purple-500 dark:text-purple-500">
                     Welcome Back !
                   </h4>
-                  <p className="text-slate-500 dark:text-zink-200">
+                  {/* <p className="text-slate-500 dark:text-zink-200">
                     Sign in to continue to Tailwick.
-                  </p>
+                  </p> */}
                 </div>
 
                 {errorMsg && (

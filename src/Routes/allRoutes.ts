@@ -5,6 +5,7 @@ import Ecommerce from "../pages/Dashboards/Ecommerce";
 import HomePage from "../pages/Landing/HomePage";
 import LandingPage from "../pages/Landing/LandingPage";
 import KycForm from "../Features/KycForm";
+import Overview from "../pages/Dashboards/Overview";
 
 interface RouteObject {
   path: string;
@@ -15,6 +16,7 @@ interface RouteObject {
 const authRoutes: Array<RouteObject> = [
   // profile
   { path: "/dashboard", component: Ecommerce },
+  { path: "/overview", component: Overview },
   { path: "/apps-invoice-list", component: InvoiceListView },
 ];
 
